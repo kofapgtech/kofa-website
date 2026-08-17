@@ -5,6 +5,9 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
+    // Served from https://kofapgtech.github.io/kofa-website/, so assets need
+    // the repo name as a prefix. Set BASE_PATH=/ when moving to a custom domain.
+    base: process.env.BASE_PATH ?? '/kofa-website/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
