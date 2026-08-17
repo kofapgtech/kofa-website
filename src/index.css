@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Manrope", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-label: "Anton", sans-serif;
+
+  --color-surface: #fff8f3;
+  --color-surface-dim: #edd7bb;
+  --color-surface-bright: #fff8f3;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #fff1e3;
+  --color-surface-container: #ffebd2;
+  --color-surface-container-high: #fbe5c8;
+  --color-surface-container-highest: #f6dfc3;
+  --color-on-surface: #251a08;
+  --color-on-surface-variant: #404942;
+  --color-primary: #2c6748;
+  --color-primary-sage: #498362;
+  --color-primary-container: #46805f;
+  --color-primary-fixed: #b2f0c9;
+  --color-primary-fixed-dim: #97d4ae;
+  --color-secondary: #4e6355;
+  --color-secondary-container: #cee6d4;
+  --color-tertiary-parchment: #f4f1e9;
+  --color-sand-neutral: #bda98f;
+  --color-dark-moss: #0d1a12;
+  --color-dark-bg: #080c09;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #fff8f3;
+  color: #251a08;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: var(--font-display);
+}
+
+.font-anton {
+  font-family: var(--font-label);
+  letter-spacing: 0.05em;
+}
+
+/* Custom subtle card borders */
+.border-earth-subtle {
+  border-color: rgba(189, 169, 143, 0.25);
+}
+
+.shadow-arboreal {
+  box-shadow: 0 10px 30px -10px rgba(189, 169, 143, 0.2);
+}
+

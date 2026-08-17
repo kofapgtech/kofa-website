@@ -1,0 +1,6 @@
+{
+  "name": "Kofa Policy Group",
+  "description": "Restorative equity, policy development, and community impact platform with design system, story, values, services marketplace, and impact calculator.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
