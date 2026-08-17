@@ -1,11 +1,36 @@
 import React, { useState } from 'react';
-import { ArrowRight, Check, Compass, RefreshCw, Layers, CheckCircle2, ShieldCheck, Sparkles, Building2 } from 'lucide-react';
+import { ArrowRight, Check, Compass, RefreshCw, Layers, CheckCircle2, ShieldCheck, Sparkles, Building2, Landmark, MonitorSmartphone, Store } from 'lucide-react';
 import { NavScreen } from '../types';
+import { submitContact } from '../lib/supabase';
 
 interface TransformingCommunitiesViewProps {
   onNavigate: (screen: NavScreen) => void;
   onOpenSchedule: () => void;
 }
+
+/** The four verticals the S² framework plugs into, per the website blueprint. */
+const verticals = [
+  {
+    title: 'Urban Planning & Development',
+    icon: <Building2 className="w-6 h-6" />,
+    body: 'Transforming physical spaces into thriving community corridors through collaborative benefit frameworks where master developers and local neighbors win together.',
+  },
+  {
+    title: 'Digital Ecosystem Building',
+    icon: <MonitorSmartphone className="w-6 h-6" />,
+    body: 'Custom automated tech stacks, light CRM architectures, and intuitive digital environments that keep vast, decentralized networks organized at scale.',
+  },
+  {
+    title: 'Small Business Support',
+    icon: <Store className="w-6 h-6" />,
+    body: 'Building localized economic resilience, helping homegrown entrepreneurs scale, and turning neighborhood operations into self-sustaining business structures.',
+  },
+  {
+    title: 'The Public Sector',
+    icon: <Landmark className="w-6 h-6" />,
+    body: 'Navigating municipal policy, government relations, large-scale contractor procurement, and regulatory frameworks to bridge bureaucratic systems and real people.',
+  },
+];
 
 export const TransformingCommunitiesView: React.FC<TransformingCommunitiesViewProps> = ({
   onNavigate,
@@ -18,14 +43,26 @@ export const TransformingCommunitiesView: React.FC<TransformingCommunitiesViewPr
   const [workEmail, setWorkEmail] = useState('');
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
-  const handleSubmitConnect = (e: React.FormEvent) => {
+  const handleSubmitConnect = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setFormSubmitted(true);
-    }, 600);
+    setSubmitError(null);
+
+    const { error } = await submitContact({
+      name: `${firstName} ${lastName}`.trim(),
+      email: workEmail,
+      organization: orgName,
+      source: 'contact',
+    });
+
+    setIsSubmitting(false);
+    if (error) {
+      setSubmitError(error);
+      return;
+    }
+    setFormSubmitted(true);
   };
 
   const partnerLogos = [
@@ -44,30 +81,34 @@ export const TransformingCommunitiesView: React.FC<TransformingCommunitiesViewPr
           {/* Left Hero Content */}
           <div className="lg:col-span-6 space-y-6 md:space-y-8">
             <h1 className="text-4xl sm:text-5xl lg:text-[64px] font-extrabold tracking-[-0.02em] leading-[1.1] text-[#2c6748] font-display">
-              Transforming <br className="hidden sm:inline" />
-              Communities
+              Built on Relationships. <br className="hidden sm:inline" />
+              Driven by Innovation.
             </h1>
 
             <p className="text-lg md:text-xl text-[#404942] leading-relaxed max-w-xl font-normal">
-              We provide industry leading software products and consulting for non-profits and purpose-driven organizations.
+              At our core, Kofa P/G is a team of community developers. Our bread and butter
+              is human relationships. Everything else we build — from physical urban
+              corridors to digital ecosystems — is a direct product of our deep experience,
+              relentless innovation, rigorous skill, and multi-generational creativity.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <button
-                id="hero-schedule-intake"
+                id="hero-partner-with-us"
                 onClick={onOpenSchedule}
                 className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-lg text-base font-semibold bg-[#2c6748] text-white hover:bg-[#23533a] active:scale-[0.98] transition-all shadow-md"
               >
-                Schedule Intake Call
+                Partner With Us
                 <ArrowRight className="w-4 h-4" />
               </button>
 
               <button
-                id="hero-explore-methodology"
+                id="hero-see-our-framework"
                 onClick={() => onNavigate('about')}
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-base font-semibold bg-[#ffebd2] text-[#251a08] hover:bg-[#fbe5c8] active:scale-[0.98] transition-all border border-[#edd7bb]"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg text-base font-semibold bg-[#ffebd2] text-[#251a08] hover:bg-[#fbe5c8] active:scale-[0.98] transition-all border border-[#edd7bb]"
               >
-                Explore Methodology
+                See Our Framework
+                <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </div>
@@ -107,7 +148,71 @@ export const TransformingCommunitiesView: React.FC<TransformingCommunitiesViewPr
         </div>
       </section>
 
-      {/* 3. OUR SERVICES SECTION */}
+      {/* 3. THE CORE MANIFESTO */}
+      <section
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32"
+        id="manifesto"
+      >
+        <div className="max-w-4xl mx-auto space-y-8">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display text-[#251a08] tracking-tight leading-[1.15]">
+            “Relationships Are the Ultimate Infrastructure.”
+          </h2>
+
+          <p className="text-lg md:text-xl text-[#404942] leading-relaxed">
+            Look at any failed urban master plan, struggling commercial corridor, or
+            abandoned digital initiative, and you will find the exact same root cause: a
+            profound lack of genuine human connection and trust.
+          </p>
+
+          <p className="text-lg md:text-xl text-[#404942] leading-relaxed">
+            We do not approach development as a detached, top-down checklist. We
+            reverse-engineer every project from the ground up, because we know that trust
+            drives results. Once the relationships are structurally locked in, we deploy
+            our multi-disciplinary skill and creative innovation to turn collective
+            community vision into permanent, thriving reality.
+          </p>
+        </div>
+      </section>
+
+      {/* 4. COMMUNITY DEVELOPMENT IN ACTION (the four verticals) */}
+      <section
+        className="w-full bg-[#fff1e3] border-y border-[#edd7bb] px-4 sm:px-6 lg:px-8 py-20 md:py-28"
+        id="verticals"
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl mb-14 space-y-4">
+            <span className="font-anton text-xs uppercase tracking-widest text-[#2c6748]">
+              Where the framework plugs in
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display text-[#251a08] tracking-tight">
+              Community Development in Action
+            </h2>
+            <p className="text-base sm:text-lg text-[#404942] leading-relaxed">
+              Because we master the human element, our universal framework adapts to
+              support, scale, and accelerate four critical verticals.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {verticals.map((vertical) => (
+              <div
+                key={vertical.title}
+                className="rounded-2xl border border-[#edd7bb] bg-[#fff8f3] p-7 shadow-sm flex flex-col"
+              >
+                <span className="w-12 h-12 rounded-full bg-[#cee6d4] text-[#2c6748] flex items-center justify-center mb-5">
+                  {vertical.icon}
+                </span>
+                <h3 className="text-lg font-bold font-display text-[#2c6748] mb-3">
+                  {vertical.title}
+                </h3>
+                <p className="text-sm text-[#404942] leading-relaxed">{vertical.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. OUR SERVICES SECTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28" id="services-overview">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold font-display text-[#2c6748] tracking-tight">
@@ -320,10 +425,20 @@ export const TransformingCommunitiesView: React.FC<TransformingCommunitiesViewPr
                     />
                   </div>
 
+                  {submitError && (
+                    <div
+                      role="alert"
+                      className="rounded-lg border border-[#e5b3a4] bg-[#fdece7] p-3 text-xs text-[#7c2d12] leading-relaxed"
+                    >
+                      We could not save your request ({submitError}). Please try again, or
+                      reach us from the Contact page.
+                    </div>
+                  )}
+
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3.5 px-4 rounded-lg bg-[#465349] hover:bg-[#2c6748] text-white text-sm font-semibold transition-colors duration-200 shadow-md flex items-center justify-center gap-2"
+                    className="w-full py-3.5 px-4 rounded-lg bg-[#465349] hover:bg-[#2c6748] disabled:opacity-70 disabled:cursor-not-allowed text-white text-sm font-semibold transition-colors duration-200 shadow-md flex items-center justify-center gap-2"
                   >
                     {isSubmitting ? (
                       <span>Processing...</span>
