@@ -1,5 +1,8 @@
 import React, { useRef } from 'react';
 import { WorkstreamsSection } from './WorkstreamsSection';
+import { DeliveryModelSection } from './DeliveryModelSection';
+import { TeamProfilesSection } from './TeamProfilesSection';
+import { CaseStudiesSection } from './CaseStudiesSection';
 import { ServicesMarketplaceView } from './ServicesMarketplaceView';
 import { CalculatorView } from './CalculatorView';
 import { NavScreen } from '../types';
@@ -25,7 +28,13 @@ export const ServicesView: React.FC<ServicesViewProps> = ({ onNavigate, onOpenSc
     <div className="w-full">
       <ServicesMarketplaceView onNavigate={onNavigate} onOpenSchedule={onOpenSchedule} />
 
+      <DeliveryModelSection />
+
       <WorkstreamsSection onOpenSchedule={onOpenSchedule} onViewCalculator={scrollToCalculator} />
+
+      <TeamProfilesSection />
+
+      <CaseStudiesSection onOpenSchedule={onOpenSchedule} />
 
       <div ref={calculatorRef} id="calculator" className="scroll-mt-24">
         <div className="w-full bg-[#2c6748] text-[#e4f5ea] px-4 sm:px-6 lg:px-8 py-10 border-t border-[#1f4b34]">

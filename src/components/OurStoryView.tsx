@@ -80,8 +80,15 @@ export const OurStoryView: React.FC = () => {
                   Vision
                 </h2>
               </div>
-              <p className="text-base sm:text-lg text-[#404942] leading-relaxed mb-6">
-                Every public serving institution in the greater Chicago region adopts Sustainable2 programs.
+              <p className="text-base sm:text-lg text-[#404942] leading-relaxed mb-4">
+                Every public-serving institution in the greater Chicago region runs on the
+                Sustainable² framework — impact measured against the UN Sustainable
+                Development Goals, funded by revenue the work generates itself.
+              </p>
+              <p className="text-base text-[#404942] leading-relaxed mb-6">
+                A region where no mission worth doing dies in a grant cycle, and where
+                community benefit is a line in the operating model rather than a line in
+                the annual report.
               </p>
 
               {/* Inset Border Quote */}
@@ -93,6 +100,63 @@ export const OurStoryView: React.FC = () => {
         </div>
       </section>
 
+      {/* 3. THE SUSTAINABLE² FRAMEWORK */}
+      <section
+        id="framework"
+        className="w-full scroll-mt-24 bg-[#2c6748] text-[#e4f5ea] px-4 sm:px-6 lg:px-8 py-20 md:py-28 border-t border-[#1f4b34]"
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl mb-14 space-y-4">
+            <span className="font-anton text-xs uppercase tracking-widest text-[#b2f0c9]">
+              Our blueprint goes anywhere
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display text-white tracking-tight">
+              The Sustainable² (S²) Framework
+            </h2>
+            <p className="text-base sm:text-lg text-[#cee6d4] leading-relaxed">
+              Most public interest programs spend down their capital and stay trapped in
+              fragile grant cycles. S² is the operational engine we use to break that
+              vulnerability — two layers, applied together.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="rounded-2xl bg-[#1e4732] border border-[#97d4ae]/30 p-8">
+              <span className="font-anton text-[11px] uppercase tracking-widest text-[#b2f0c9]">
+                Sustainable¹
+              </span>
+              <h3 className="text-2xl font-bold font-display text-white mt-2 mb-4">
+                The Impact
+              </h3>
+              <p className="text-sm sm:text-base text-[#cee6d4] leading-relaxed">
+                Every initiative drives clear, trackable, reportable progress aligned with
+                both localized community needs and global standards, including the United
+                Nations Sustainable Development Goals.
+              </p>
+            </div>
+
+            <div className="rounded-2xl bg-[#1e4732] border border-[#97d4ae]/30 p-8">
+              <span className="font-anton text-[11px] uppercase tracking-widest text-[#b2f0c9]">
+                Sustainable²
+              </span>
+              <h3 className="text-2xl font-bold font-display text-white mt-2 mb-4">
+                The Revenue
+              </h3>
+              <p className="text-sm sm:text-base text-[#cee6d4] leading-relaxed">
+                We re-engineer projects to generate their own earned revenue. Injecting
+                business mechanics directly into civic and community spaces breaks the
+                volatile cycle of grant and donation dependency.
+              </p>
+            </div>
+          </div>
+
+          <p className="mt-8 max-w-3xl text-sm text-[#cee6d4] leading-relaxed border-l-2 border-[#b2f0c9] pl-4">
+            <strong className="text-white">Material Investing:</strong> we don't just
+            advise. We build mission-aligned ventures, service lines, and joint operations
+            directly alongside our clients, so their vital work funds itself long-term.
+          </p>
+        </div>
+      </section>
     </div>
   );
 };

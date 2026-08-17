@@ -38,3 +38,35 @@ export interface EthosItem {
   icon: string;
   description: string;
 }
+
+export type WorkstreamId = 'programs' | 'studio' | 'ppc' | 'finops' | 'experiences' | 'tech';
+
+/** How a client engages us: a partnership, or a program we co-venture on. */
+export type EngagementTrack = 'partnership' | 'program';
+
+/** Both tracks can be delivered either way. */
+export type EngagementModel = 'bespoke' | 'fractional';
+
+export interface CaseStudy {
+  id: string;
+  name: string;
+  /** Partner organization behind the work, where it differs from the program name. */
+  partner?: string;
+  /** A case study can sit in both tracks. */
+  tracks: EngagementTrack[];
+  models: EngagementModel[];
+  summary: string;
+  workstreams: WorkstreamId[];
+  /** False when we do not yet have approved copy for this engagement. */
+  published: boolean;
+}
+
+export type TriadRole = 'builder' | 'architect' | 'planner';
+
+export interface TeamMember {
+  id: string;
+  name: string;
+  title: string;
+  role: TriadRole;
+  bio: string;
+}
