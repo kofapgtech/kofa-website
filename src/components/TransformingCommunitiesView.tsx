@@ -64,7 +64,7 @@ export const TransformingCommunitiesView: React.FC<TransformingCommunitiesViewPr
 
               <button
                 id="hero-explore-methodology"
-                onClick={() => onNavigate('story')}
+                onClick={() => onNavigate('about')}
                 className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-base font-semibold bg-[#ffebd2] text-[#251a08] hover:bg-[#fbe5c8] active:scale-[0.98] transition-all border border-[#edd7bb]"
               >
                 Explore Methodology

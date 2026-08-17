@@ -172,7 +172,7 @@ export const OurValuesView: React.FC<OurValuesViewProps> = ({
         {/* CTA to Calculator */}
         <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
           <button
-            onClick={() => onNavigate('calculator')}
+            onClick={() => onNavigate('services')}
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-[#2c6748] text-white text-sm font-semibold hover:bg-[#23533a] shadow-md transition-all"
           >
             Launch Wealth & Impact Calculator
