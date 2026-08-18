@@ -16,18 +16,13 @@ export const OurStoryView: React.FC = () => {
             <div className="lg:col-span-7 space-y-6">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display tracking-tight text-white leading-tight">
                 KOFA comes from <br className="hidden sm:inline" />
-                the Sankofa
+                the word Sankofa
               </h1>
 
-              <div className="space-y-4 text-sm sm:text-base lg:text-lg text-[#e4f5ea] font-normal leading-relaxed">
+              <div className="space-y-4 text-base sm:text-lg lg:text-xl text-[#e4f5ea] font-normal leading-relaxed">
                 <p>
-                  <span className="font-semibold text-white">Sankofa</span>, from the Akan people of West Africa (Ghana), teaches: <em className="italic text-white">"Go back and fetch what you have forgotten."</em>
-                </p>
-                <p>
-                  The symbol—a bird reaching back for an egg—represents learning from the past to build the future.
-                </p>
-                <p>
-                  KOFA applies this philosophy to sustainability and the circular economy: reclaiming value, regenerating resources, and designing systems that endure across generations.
+                  from the Akan people of West Africa (Ghana). It teaches:{' '}
+                  <em className="italic text-white">“Go back and fetch what you have forgotten.”</em>
                 </p>
               </div>
             </div>
@@ -42,10 +37,7 @@ export const OurStoryView: React.FC = () => {
                 {/* Center circle */}
                 <div className="w-44 h-44 rounded-full bg-[#1e4732] border border-[#97d4ae]/40 flex flex-col items-center justify-center p-4 shadow-inner relative">
                   {/* The emblem carries its own cream disc, so no backing circle here */}
-                  <SankofaBirdIcon className="w-20 h-20 mb-2 shadow-lg rounded-full" />
-                  <span className="font-anton text-[10px] uppercase tracking-widest text-[#b2f0c9]">
-                    SANKOFA TRADITION
-                  </span>
+                  <SankofaBirdIcon className="w-24 h-24 shadow-lg rounded-full" />
                 </div>
               </div>
             </div>

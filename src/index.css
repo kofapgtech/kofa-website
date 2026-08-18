@@ -54,3 +54,51 @@ h1, h2, h3, h4, .font-heading {
   box-shadow: 0 10px 30px -10px rgba(189, 169, 143, 0.2);
 }
 
+
+/* Partner marquee: one continuous line that scrolls, with a static wrapping
+   fallback for reduced-motion users. */
+.partner-marquee {
+  width: 100%;
+  overflow: hidden;
+}
+
+.partner-marquee__track {
+  display: flex;
+  width: max-content;
+  animation: partner-scroll 40s linear infinite;
+}
+
+.partner-marquee:hover .partner-marquee__track {
+  animation-play-state: paused;
+}
+
+.partner-marquee__group {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+  padding-right: 3.5rem;
+}
+
+@keyframes partner-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .partner-marquee__track {
+    animation: none;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  /* One copy is enough when nothing is moving. */
+  .partner-marquee__group[aria-hidden='true'] {
+    display: none;
+  }
+  .partner-marquee__group {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding-right: 0;
+  }
+}

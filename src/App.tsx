@@ -5,6 +5,7 @@ import { TransformingCommunitiesView } from './components/TransformingCommunitie
 import { AboutView } from './components/AboutView';
 import { ServicesView } from './components/ServicesView';
 import { ContactView } from './components/ContactView';
+import { PrivacyPolicyView, TermsOfServiceView } from './components/LegalView';
 import { NavScreen } from './types';
 
 export function App() {
@@ -36,9 +37,13 @@ export function App() {
         )}
 
         {currentScreen === 'contact' && <ContactView />}
+
+        {currentScreen === 'privacy' && <PrivacyPolicyView />}
+
+        {currentScreen === 'terms' && <TermsOfServiceView />}
       </main>
 
-      <Footer variant={currentScreen === 'contact' ? 'green' : 'warm'} onNavigate={navigate} />
+      <Footer onNavigate={navigate} />
     </div>
   );
 }

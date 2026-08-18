@@ -65,6 +65,8 @@ export const TransformingCommunitiesView: React.FC<TransformingCommunitiesViewPr
     setFormSubmitted(true);
   };
 
+  // TODO: replace these names with partner logos, and link each to the partner's
+  // site. Tracked in the repo issues.
   const partnerLogos = [
     'Purchasing with Purpose',
     'South Side Help Center',
@@ -129,20 +131,34 @@ export const TransformingCommunitiesView: React.FC<TransformingCommunitiesViewPr
       </section>
 
       {/* 2. TRUSTED BY LOGO TICKER */}
-      <section className="border-y border-[#edd7bb]/60 bg-[#fff1e3]/60 py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="font-anton text-xs uppercase tracking-[0.15em] text-[#707972] mb-6">
-            Trusted by changemakers including
-          </p>
+      <section className="border-y border-[#edd7bb]/60 bg-[#fff1e3]/60 py-10 overflow-hidden">
+        <p className="font-anton text-xs uppercase tracking-[0.15em] text-[#707972] mb-6 text-center px-4">
+          Trusted by changemakers including
+        </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-14">
-            {partnerLogos.map((partner, idx) => (
-              <span
-                key={idx}
-                className="text-lg md:text-2xl font-bold font-display text-[#8c948e] hover:text-[#2c6748] transition-colors cursor-default select-none tracking-tight"
+        {/*
+          Marquee: the track holds two identical copies of the list, so when the
+          first copy has scrolled exactly one width the animation loops seamlessly.
+          Under prefers-reduced-motion the animation is disabled and the list falls
+          back to a centred, wrapping row (see .partner-marquee in index.css).
+        */}
+        <div className="partner-marquee group" aria-label="Partner organizations">
+          <div className="partner-marquee__track">
+            {[0, 1].map((copy) => (
+              <div
+                key={copy}
+                className="partner-marquee__group"
+                aria-hidden={copy === 1 ? true : undefined}
               >
-                {partner}
-              </span>
+                {partnerLogos.map((partner) => (
+                  <span
+                    key={`${copy}-${partner}`}
+                    className="text-lg md:text-2xl font-bold font-display text-[#8c948e] hover:text-[#2c6748] transition-colors select-none tracking-tight whitespace-nowrap"
+                  >
+                    {partner}
+                  </span>
+                ))}
+              </div>
             ))}
           </div>
         </div>
@@ -218,9 +234,6 @@ export const TransformingCommunitiesView: React.FC<TransformingCommunitiesViewPr
           <h2 className="text-4xl md:text-5xl font-bold font-display text-[#2c6748] tracking-tight">
             Our Services
           </h2>
-          <p className="text-base md:text-lg text-[#404942] leading-relaxed">
-            Tailored engagement models designed to meet your organization exactly where it is in its impact journey.
-          </p>
         </div>
 
         {/* 2 Main Service Cards */}
@@ -443,7 +456,7 @@ export const TransformingCommunitiesView: React.FC<TransformingCommunitiesViewPr
                     {isSubmitting ? (
                       <span>Processing...</span>
                     ) : (
-                      <span>Request Impact Assessment</span>
+                      <span>Submit</span>
                     )}
                   </button>
 

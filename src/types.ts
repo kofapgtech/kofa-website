@@ -1,4 +1,4 @@
-export type NavScreen = 'home' | 'about' | 'services' | 'contact';
+export type NavScreen = 'home' | 'about' | 'services' | 'contact' | 'privacy' | 'terms';
 
 export interface ServiceItem {
   id: string;
