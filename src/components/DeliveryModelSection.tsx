@@ -1,5 +1,6 @@
 import React from 'react';
 import { Hammer, Compass, Landmark } from 'lucide-react';
+import treeSrc from '../assets/brand/tree.png';
 import { TriadRole } from '../types';
 
 interface Triad {
@@ -49,18 +50,31 @@ export const DeliveryModelSection: React.FC = () => (
     className="w-full scroll-mt-24 bg-[#fff8f3] text-[#251a08] border-t border-[#edd7bb] px-4 sm:px-6 lg:px-8 py-20 md:py-28"
   >
     <div className="max-w-7xl mx-auto">
-      <div className="max-w-3xl mb-14 space-y-4">
-        <span className="font-anton text-xs uppercase tracking-widest text-[#2c6748]">
-          How we deploy
-        </span>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display text-[#251a08] tracking-tight">
-          One tree, three kinds of growth.
-        </h2>
-        <p className="text-base sm:text-lg text-[#404942] leading-relaxed">
-          We do not staff accounts from a bench of interchangeable consultants. Every
-          engagement is anchored by an intergenerational, cross-functional triad — and
-          each role does something the other two cannot.
-        </p>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-14">
+        <div className="lg:col-span-7 space-y-4">
+          <span className="font-anton text-xs uppercase tracking-widest text-[#2c6748]">
+            How we deploy
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display text-[#251a08] tracking-tight">
+            One tree, three kinds of growth.
+          </h2>
+          <p className="text-base sm:text-lg text-[#404942] leading-relaxed">
+            We do not staff accounts from a bench of interchangeable consultants. Every
+            engagement is anchored by an intergenerational, cross-functional triad — and
+            each role does something the other two cannot.
+          </p>
+        </div>
+
+        <div className="lg:col-span-5 flex justify-center">
+          <span className="inline-flex items-center justify-center rounded-2xl bg-[#30593f] p-8 shadow-lg">
+            <img
+              src={treeSrc}
+              alt=""
+              aria-hidden="true"
+              className="w-full max-w-[260px] h-auto object-contain"
+            />
+          </span>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
