@@ -98,16 +98,10 @@ export const ServicesMarketplaceView: React.FC<ServicesMarketplaceViewProps> = (
     <div className="w-full bg-[#fff8f3] text-[#251a08] py-12 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
-          <span className="inline-block px-4 py-1 rounded-full text-xs font-semibold bg-[#b2f0c9] text-[#002111] border border-[#97d4ae]">
-            Tailored Engagement Models
-          </span>
-          <h1 className="text-4xl sm:text-5xl font-extrabold font-display text-[#2c6748] tracking-tight">
-            Our Services & Marketplace
+        <div className="mb-14">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display text-[#251a08] tracking-tight">
+            Our Services
           </h1>
-          <p className="text-base sm:text-lg text-[#404942]">
-            Choose between comprehensive bespoke systemic engagements or agile execution with our fractional credit blocks.
-          </p>
         </div>
 
         {/* 1. TOP 2 ENGAGEMENT MODELS */}
@@ -120,7 +114,7 @@ export const ServicesMarketplaceView: React.FC<ServicesMarketplaceViewProps> = (
               </div>
               <h2 className="text-2xl font-bold font-display text-[#251a08] mb-3">Bespoke Engagements</h2>
               <p className="text-sm text-[#404942] mb-6 leading-relaxed">
-                Full-scope institutional overhauls for organizations committing to multi-year restorative equity and circular procurement transformations.
+                Full-scope institutional overhauls for organizations committing to multi-year restorative equity and circular procurement transformations. Capabilities include:
               </p>
               <ul className="space-y-3 text-sm text-[#251a08] font-medium mb-8">
                 <li className="flex items-center gap-2.5">
@@ -145,9 +139,9 @@ export const ServicesMarketplaceView: React.FC<ServicesMarketplaceViewProps> = (
             </div>
             <button
               onClick={onOpenSchedule}
-              className="w-full py-3.5 px-4 rounded-xl border border-[#707972] text-sm font-semibold hover:bg-[#fff1e3] transition-colors text-center"
+              className="w-full py-3.5 px-4 rounded-xl bg-[#2c6748] text-white text-sm font-semibold hover:bg-[#388e5d] transition-colors text-center shadow-sm"
             >
-              Consult with Senior Policy Strategist
+              Schedule Intake
             </button>
           </div>
 
@@ -157,9 +151,9 @@ export const ServicesMarketplaceView: React.FC<ServicesMarketplaceViewProps> = (
               <div className="w-12 h-12 rounded-full bg-[#b2f0c9] text-[#2c6748] flex items-center justify-center mb-6">
                 <RefreshCw className="w-6 h-6" />
               </div>
-              <h2 className="text-2xl font-bold font-display text-white mb-3">Fractional Credit System</h2>
+              <h2 className="text-2xl font-bold font-display text-white mb-3">Fractional Work</h2>
               <p className="text-sm text-[#e4f5ea] mb-6 leading-relaxed">
-                Purchase reusable credit packages and draw down on specialized technical, creative, and financial workstreams on an as-needed agile basis.
+                Purchase credit packages and redeem on preset technical, creative, and financial workflow products on an as-needed basis.
               </p>
               <div className="bg-[#1e4732] rounded-2xl p-5 border border-[#97d4ae]/30 space-y-3 mb-8">
                 <div className="flex justify-between items-center text-xs">
@@ -178,7 +172,7 @@ export const ServicesMarketplaceView: React.FC<ServicesMarketplaceViewProps> = (
               }}
               className="w-full py-3.5 px-4 rounded-xl bg-[#b2f0c9] text-[#002111] text-sm font-bold hover:bg-white transition-colors text-center shadow-sm"
             >
-              Explore Catalog Below
+              Purchase Credits
             </button>
           </div>
         </div>

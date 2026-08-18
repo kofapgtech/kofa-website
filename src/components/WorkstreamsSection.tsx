@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { GitFork, Megaphone, Handshake, BarChart3, Users, Wrench, X, ArrowRight, Sparkles, Check } from 'lucide-react';
+import { GitFork, Megaphone, Handshake, BarChart3, Users, Wrench, X, Sparkles, Check } from 'lucide-react';
 import { WorkstreamItem } from '../types';
 
 interface WorkstreamsSectionProps {
   onOpenSchedule: () => void;
-  onViewCalculator?: () => void;
 }
 
 const workstreamsData: WorkstreamItem[] = [
@@ -96,7 +95,6 @@ const workstreamsData: WorkstreamItem[] = [
 
 export const WorkstreamsSection: React.FC<WorkstreamsSectionProps> = ({
   onOpenSchedule,
-  onViewCalculator,
 }) => {
   const [selectedWorkstream, setSelectedWorkstream] = useState<WorkstreamItem | null>(null);
 
@@ -123,13 +121,10 @@ export const WorkstreamsSection: React.FC<WorkstreamsSectionProps> = ({
     <>
       <section className="w-full bg-[#080c09] text-white py-20 md:py-28 px-4 sm:px-6 lg:px-8 border-t border-[#135134]" id="workstreams">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display text-[#388e5d] tracking-tight">
-              Access to 6 Workstreams
+          <div className="mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display text-white tracking-tight">
+              Our Workstreams
             </h2>
-            <p className="text-sm sm:text-base md:text-lg text-[#c9c6bf] leading-relaxed font-normal">
-              Kofa P/G workstreams help us control costs and support multifaceted work as one firm. Clients benefit from a multifunctional workflow that drives measurable outcomes and transformative initiatives.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -137,38 +132,22 @@ export const WorkstreamsSection: React.FC<WorkstreamsSectionProps> = ({
               <div
                 key={ws.id}
                 onClick={() => setSelectedWorkstream(ws)}
-                className="bg-[#fff8f3] text-[#251a08] rounded-2xl p-8 flex flex-col items-center text-center justify-center hover:bg-white hover:scale-[1.02] cursor-pointer transition-all duration-300 shadow-xl group border border-[#edd7bb]"
+                className="bg-[#fff8f3] text-[#251a08] rounded-2xl p-8 flex flex-col items-center text-center justify-center cursor-pointer transition-all duration-300 shadow-xl group border border-[#edd7bb] hover:bg-[#cee6d4] hover:border-[#2c6748] hover:-translate-y-1"
               >
-                <div className="w-16 h-16 rounded-full bg-[#b2f0c9] flex items-center justify-center text-[#2c6748] mb-5 group-hover:bg-[#97d4ae] transition-colors shadow-sm">
+                <div className="w-16 h-16 rounded-full bg-[#b2f0c9] flex items-center justify-center text-[#2c6748] mb-5 group-hover:bg-[#2c6748] group-hover:text-white transition-colors shadow-sm">
                   {renderIcon(ws.icon)}
                 </div>
 
-                <h3 className="font-anton text-xs tracking-widest text-[#251a08] group-hover:text-[#2c6748] transition-colors">
+                <h3 className="font-anton text-xs tracking-widest text-[#251a08] group-hover:text-[#1e4732] transition-colors">
                   {ws.name}
                 </h3>
 
-                <p className="text-xs text-[#707972] mt-2 line-clamp-2">
+                <p className="text-xs text-[#707972] group-hover:text-[#2f4a3a] mt-2 line-clamp-2 transition-colors">
                   {ws.description}
                 </p>
-
-                <span className="mt-4 inline-flex items-center text-[11px] font-semibold text-[#2c6748] group-hover:translate-x-1 transition-transform">
-                  Explore Capabilities →
-                </span>
               </div>
             ))}
           </div>
-
-          {onViewCalculator && (
-            <div className="mt-14 text-center">
-              <button
-                onClick={onViewCalculator}
-                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg bg-[#2c6748] hover:bg-[#388e5d] text-white text-sm font-semibold transition-all shadow-lg"
-              >
-                Estimate Workstream Allocation in the Calculator
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
-          )}
         </div>
       </section>
 

@@ -1,30 +1,26 @@
 import React, { useState } from 'react';
-import { ArrowRight, Handshake, Sprout } from 'lucide-react';
+import { Handshake, Sprout } from 'lucide-react';
 import { caseStudies, workstreamLabels } from '../data/caseStudies';
 import { EngagementTrack } from '../types';
-
-interface CaseStudiesSectionProps {
-  onOpenSchedule: () => void;
-}
 
 const tracks: { id: EngagementTrack; label: string; blurb: string; icon: React.ReactNode }[] = [
   {
     id: 'partnership',
     label: 'Partnerships',
     blurb:
-      'We absorb operational weight so you stay the visible, trusted face of the work. Delivered bespoke or fractional.',
+      'We absorb operational weight so you stay the visible, trusted face of the work.',
     icon: <Handshake className="w-5 h-5" />,
   },
   {
     id: 'program',
     label: 'Programs',
     blurb:
-      'Co-venture with us. We build the engine and the revenue model alongside you, so the work funds itself. Bespoke or fractional.',
+      'Co-venture with us. We build the engine and the revenue model alongside you, so the work funds itself.',
     icon: <Sprout className="w-5 h-5" />,
   },
 ];
 
-export const CaseStudiesSection: React.FC<CaseStudiesSectionProps> = ({ onOpenSchedule }) => {
+export const CaseStudiesSection: React.FC = () => {
   const [active, setActive] = useState<EngagementTrack>('partnership');
 
   const shown = caseStudies.filter((cs) => cs.published && cs.tracks.includes(active));
@@ -36,16 +32,10 @@ export const CaseStudiesSection: React.FC<CaseStudiesSectionProps> = ({ onOpenSc
       className="w-full scroll-mt-24 bg-[#f6dfc3] text-[#251a08] border-t border-[#edd7bb] px-4 sm:px-6 lg:px-8 py-20 md:py-28"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="max-w-3xl mb-10 space-y-4">
-          <span className="font-anton text-xs uppercase tracking-widest text-[#2c6748]">
-            Selected work
-          </span>
+        <div className="mb-10">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display text-[#251a08] tracking-tight">
-            Past projects, and the workstreams behind them.
+            Our Past Work
           </h2>
-          <p className="text-base sm:text-lg text-[#404942] leading-relaxed">
-            Clients work with us in one of two ways. Both draw on the same six workstreams.
-          </p>
         </div>
 
         {/* Track switch */}
@@ -87,17 +77,6 @@ export const CaseStudiesSection: React.FC<CaseStudiesSectionProps> = ({ onOpenSc
                 <span className="text-xs text-[#b2f0c9] mt-1">with {cs.partner}</span>
               )}
 
-              <div className="flex flex-wrap gap-1.5 mt-3">
-                {cs.models.map((model) => (
-                  <span
-                    key={model}
-                    className="rounded-full border border-[#97d4ae]/50 px-2.5 py-0.5 text-[10px] font-anton uppercase tracking-widest text-[#cee6d4]"
-                  >
-                    {model}
-                  </span>
-                ))}
-              </div>
-
               <p className="text-sm text-[#cee6d4] leading-relaxed mt-4">{cs.summary}</p>
 
               <div className="mt-5 pt-4 border-t border-[#97d4ae]/25">
@@ -117,16 +96,6 @@ export const CaseStudiesSection: React.FC<CaseStudiesSectionProps> = ({ onOpenSc
               </div>
             </article>
           ))}
-        </div>
-
-        <div className="mt-12">
-          <button
-            onClick={onOpenSchedule}
-            className="inline-flex items-center gap-2 rounded-lg bg-[#2c6748] px-8 py-3.5 text-sm font-semibold text-white shadow-lg transition-all hover:bg-[#388e5d]"
-          >
-            {active === 'program' ? 'Co-venture with us' : 'Start a partnership'}
-            <ArrowRight className="w-4 h-4" />
-          </button>
         </div>
       </div>
     </section>
