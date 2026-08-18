@@ -28,9 +28,7 @@ export function App() {
           <TransformingCommunitiesView onNavigate={navigate} onOpenSchedule={goToContact} />
         )}
 
-        {currentScreen === 'about' && (
-          <AboutView onNavigate={navigate} onOpenSchedule={goToContact} />
-        )}
+        {currentScreen === 'about' && <AboutView />}
 
         {currentScreen === 'services' && (
           <ServicesView onNavigate={navigate} onOpenSchedule={goToContact} />

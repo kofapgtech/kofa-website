@@ -78,9 +78,8 @@ export const OurStoryView: React.FC = () => {
                 Development Goals, funded by revenue the work generates itself.
               </p>
               <p className="text-base text-[#404942] leading-relaxed mb-6">
-                A region where no mission worth doing dies in a grant cycle, and where
-                community benefit is a line in the operating model rather than a line in
-                the annual report.
+                A region where no mission dies in a grant cycle, and where community
+                benefit is a line in the operating model, not the annual report.
               </p>
 
               {/* Inset Border Quote */}
@@ -99,9 +98,6 @@ export const OurStoryView: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mb-14 space-y-4">
-            <span className="font-anton text-xs uppercase tracking-widest text-[#b2f0c9]">
-              Our blueprint goes anywhere
-            </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display text-white tracking-tight">
               The Sustainable² (S²) Framework
             </h2>
@@ -114,11 +110,8 @@ export const OurStoryView: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="rounded-2xl bg-[#1e4732] border border-[#97d4ae]/30 p-8">
-              <span className="font-anton text-[11px] uppercase tracking-widest text-[#b2f0c9]">
-                Sustainable¹
-              </span>
-              <h3 className="text-2xl font-bold font-display text-white mt-2 mb-4">
-                The Impact
+              <h3 className="text-2xl sm:text-3xl font-bold font-display text-white mb-4">
+                S¹: Impact
               </h3>
               <p className="text-sm sm:text-base text-[#cee6d4] leading-relaxed">
                 Every initiative drives clear, trackable, reportable progress aligned with
@@ -128,11 +121,8 @@ export const OurStoryView: React.FC = () => {
             </div>
 
             <div className="rounded-2xl bg-[#1e4732] border border-[#97d4ae]/30 p-8">
-              <span className="font-anton text-[11px] uppercase tracking-widest text-[#b2f0c9]">
-                Sustainable²
-              </span>
-              <h3 className="text-2xl font-bold font-display text-white mt-2 mb-4">
-                The Revenue
+              <h3 className="text-2xl sm:text-3xl font-bold font-display text-white mb-4">
+                S²: Revenue
               </h3>
               <p className="text-sm sm:text-base text-[#cee6d4] leading-relaxed">
                 We re-engineer projects to generate their own earned revenue. Injecting
