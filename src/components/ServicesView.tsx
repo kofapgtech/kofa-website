@@ -1,5 +1,6 @@
 import React from 'react';
 import { WorkstreamsSection } from './WorkstreamsSection';
+import { CollaborationOpportunitiesSection } from './CollaborationOpportunitiesSection';
 import { DeliveryModelSection } from './DeliveryModelSection';
 import { TeamProfilesSection } from './TeamProfilesSection';
 import { CaseStudiesSection } from './CaseStudiesSection';
@@ -18,6 +19,8 @@ interface ServicesViewProps {
 export const ServicesView: React.FC<ServicesViewProps> = ({ onNavigate, onOpenSchedule }) => (
   <div className="w-full">
     <ServicesMarketplaceView onNavigate={onNavigate} onOpenSchedule={onOpenSchedule} />
+
+    <CollaborationOpportunitiesSection />
 
     <DeliveryModelSection />
 
