@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { WorkstreamsSection } from './WorkstreamsSection';
 import { CollaborationOpportunitiesSection } from './CollaborationOpportunitiesSection';
 import { DeliveryModelSection } from './DeliveryModelSection';
@@ -13,21 +13,40 @@ interface ServicesViewProps {
 }
 
 /**
- * Services is the single commercial page: engagement models, the delivery
- * triad, the six workstreams, and past work.
+ * Services opens with the two collaboration tracks. The fractional catalog is
+ * expensive real estate — a full credit marketplace — so it stays out of the
+ * page until the visitor asks for it via the "View Services" CTA.
  */
-export const ServicesView: React.FC<ServicesViewProps> = ({ onNavigate, onOpenSchedule }) => (
-  <div className="w-full">
-    <ServicesMarketplaceView onNavigate={onNavigate} onOpenSchedule={onOpenSchedule} />
+export const ServicesView: React.FC<ServicesViewProps> = ({ onOpenSchedule }) => {
+  const [showFractionalCatalog, setShowFractionalCatalog] = useState(false);
+  const catalogRef = useRef<HTMLDivElement>(null);
 
-    <CollaborationOpportunitiesSection />
+  useEffect(() => {
+    if (showFractionalCatalog) {
+      catalogRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [showFractionalCatalog]);
 
-    <DeliveryModelSection />
+  return (
+    <div className="w-full">
+      <CollaborationOpportunitiesSection
+        onOpenSchedule={onOpenSchedule}
+        onViewFractionalServices={() => setShowFractionalCatalog(true)}
+      />
 
-    <WorkstreamsSection onOpenSchedule={onOpenSchedule} />
+      {showFractionalCatalog && (
+        <div ref={catalogRef}>
+          <ServicesMarketplaceView onOpenSchedule={onOpenSchedule} />
+        </div>
+      )}
 
-    <TeamProfilesSection />
+      <DeliveryModelSection />
 
-    <CaseStudiesSection />
-  </div>
-);
+      <WorkstreamsSection onOpenSchedule={onOpenSchedule} />
+
+      <TeamProfilesSection />
+
+      <CaseStudiesSection />
+    </div>
+  );
+};

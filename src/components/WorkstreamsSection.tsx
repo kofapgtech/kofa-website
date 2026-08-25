@@ -122,9 +122,19 @@ export const WorkstreamsSection: React.FC<WorkstreamsSectionProps> = ({
       <section className="w-full bg-[#080c09] text-white py-20 md:py-28 px-4 sm:px-6 lg:px-8 border-t border-[#135134]" id="workstreams">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display text-white tracking-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display text-white tracking-tight mb-6">
               Our Workstreams
             </h2>
+            <div className="max-w-3xl rounded-2xl border border-[#388e5d]/40 bg-[#122e20] p-6 sm:p-8">
+              <span className="block font-anton text-xs uppercase tracking-widest text-[#97d4ae] mb-2">
+                Access to 6 Workstreams
+              </span>
+              <p className="text-sm sm:text-base text-[#c9c6bf] leading-relaxed">
+                Kofa P/G workstreams help us control costs and support multifaceted work as
+                one firm. Clients benefit from a multifunctional workflow that drives
+                measurable outcomes and transformative initiatives.
+              </p>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

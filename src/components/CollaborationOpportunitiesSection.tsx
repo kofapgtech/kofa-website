@@ -1,5 +1,5 @@
 import React from 'react';
-import { GitMerge, Zap } from 'lucide-react';
+import { ArrowRight, GitMerge, Zap } from 'lucide-react';
 
 interface Track {
   number: string;
@@ -9,6 +9,7 @@ interface Track {
   bestFor: string;
   howItWorks: string;
   icon: React.ReactNode;
+  cta: string;
 }
 
 const tracks: Track[] = [
@@ -22,6 +23,7 @@ const tracks: Track[] = [
     howItWorks:
       'Co-development agreements, shared-risk/revenue structures, joint IP ownership, and long-term operational alignment.',
     icon: <GitMerge className="w-6 h-6" />,
+    cta: 'Schedule Intake',
   },
   {
     number: '2',
@@ -33,10 +35,19 @@ const tracks: Track[] = [
     howItWorks:
       'Fixed-cost credit packages purchased upfront and redeemed against specific, pre-priced deliverables—eliminating time-and-materials friction in favor of guaranteed, shipped outcomes.',
     icon: <Zap className="w-6 h-6" />,
+    cta: 'View Services',
   },
 ];
 
-export const CollaborationOpportunitiesSection: React.FC = () => (
+interface CollaborationOpportunitiesSectionProps {
+  onOpenSchedule: () => void;
+  onViewFractionalServices: () => void;
+}
+
+export const CollaborationOpportunitiesSection: React.FC<CollaborationOpportunitiesSectionProps> = ({
+  onOpenSchedule,
+  onViewFractionalServices,
+}) => (
   <section
     id="collaboration-opportunities"
     className="w-full scroll-mt-24 bg-[#fff1e3] border-t border-[#edd7bb] px-4 sm:px-6 lg:px-8 py-20 md:py-28"
@@ -89,6 +100,14 @@ export const CollaborationOpportunitiesSection: React.FC = () => (
                 <p className="text-sm text-[#404942] leading-relaxed">{track.howItWorks}</p>
               </div>
             </div>
+
+            <button
+              onClick={track.number === '1' ? onOpenSchedule : onViewFractionalServices}
+              className="mt-6 w-full inline-flex items-center justify-center gap-2 rounded-xl bg-[#2c6748] px-4 py-3.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#388e5d]"
+            >
+              {track.cta}
+              <ArrowRight className="w-4 h-4" />
+            </button>
           </div>
         ))}
       </div>

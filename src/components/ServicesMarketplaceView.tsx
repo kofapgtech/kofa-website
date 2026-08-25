@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { Compass, RefreshCw, Layers, Check, ArrowRight, Filter, Sparkles, ShoppingBag, Info } from 'lucide-react';
-import { NavScreen, ServiceItem } from '../types';
+import { Filter, ShoppingBag } from 'lucide-react';
+import { ServiceItem } from '../types';
 
 interface ServicesMarketplaceViewProps {
-  onNavigate: (screen: NavScreen) => void;
   onOpenSchedule: () => void;
 }
 
@@ -71,7 +70,6 @@ const marketplaceServices: ServiceItem[] = [
 ];
 
 export const ServicesMarketplaceView: React.FC<ServicesMarketplaceViewProps> = ({
-  onNavigate,
   onOpenSchedule,
 }) => {
   const [selectedWorkstream, setSelectedWorkstream] = useState<string>('ALL');
@@ -97,87 +95,7 @@ export const ServicesMarketplaceView: React.FC<ServicesMarketplaceViewProps> = (
   return (
     <div className="w-full bg-[#fff8f3] text-[#251a08] py-12 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="mb-14">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display text-[#251a08] tracking-tight">
-            Our Services
-          </h1>
-        </div>
-
-        {/* 1. TOP 2 ENGAGEMENT MODELS */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
-          {/* Bespoke Box */}
-          <div className="bg-white border border-[#edd7bb] rounded-3xl p-8 sm:p-10 shadow-sm flex flex-col justify-between">
-            <div>
-              <div className="w-12 h-12 rounded-full bg-[#fbe5c8] flex items-center justify-center text-[#2c6748] mb-6">
-                <Compass className="w-6 h-6" />
-              </div>
-              <h2 className="text-2xl font-bold font-display text-[#251a08] mb-3">Bespoke Engagements</h2>
-              <p className="text-sm text-[#404942] mb-6 leading-relaxed">
-                Full-scope institutional overhauls for organizations committing to multi-year restorative equity and circular procurement transformations. Capabilities include:
-              </p>
-              <ul className="space-y-3 text-sm text-[#251a08] font-medium mb-8">
-                <li className="flex items-center gap-2.5">
-                  <span className="w-5 h-5 rounded-full bg-[#cee6d4] text-[#2c6748] flex items-center justify-center shrink-0">
-                    <Check className="w-3 h-3 stroke-[3]" />
-                  </span>
-                  <span>Procurement Policy Overhaul & Board Ratification</span>
-                </li>
-                <li className="flex items-center gap-2.5">
-                  <span className="w-5 h-5 rounded-full bg-[#cee6d4] text-[#2c6748] flex items-center justify-center shrink-0">
-                    <Check className="w-3 h-3 stroke-[3]" />
-                  </span>
-                  <span>End-to-End Supply Chain Impact Auditing</span>
-                </li>
-                <li className="flex items-center gap-2.5">
-                  <span className="w-5 h-5 rounded-full bg-[#cee6d4] text-[#2c6748] flex items-center justify-center shrink-0">
-                    <Check className="w-3 h-3 stroke-[3]" />
-                  </span>
-                  <span>Seven-Generation Strategy Roadmapping</span>
-                </li>
-              </ul>
-            </div>
-            <button
-              onClick={onOpenSchedule}
-              className="w-full py-3.5 px-4 rounded-xl bg-[#2c6748] text-white text-sm font-semibold hover:bg-[#388e5d] transition-colors text-center shadow-sm"
-            >
-              Schedule Intake
-            </button>
-          </div>
-
-          {/* Fractional Model */}
-          <div className="bg-[#2c6748] text-white rounded-3xl p-8 sm:p-10 shadow-lg flex flex-col justify-between">
-            <div>
-              <div className="w-12 h-12 rounded-full bg-[#b2f0c9] text-[#2c6748] flex items-center justify-center mb-6">
-                <RefreshCw className="w-6 h-6" />
-              </div>
-              <h2 className="text-2xl font-bold font-display text-white mb-3">Fractional Work</h2>
-              <p className="text-sm text-[#e4f5ea] mb-6 leading-relaxed">
-                Purchase credit packages and redeem on preset technical, creative, and financial workflow products on an as-needed basis.
-              </p>
-              <div className="bg-[#1e4732] rounded-2xl p-5 border border-[#97d4ae]/30 space-y-3 mb-8">
-                <div className="flex justify-between items-center text-xs">
-                  <span className="font-anton uppercase tracking-wider text-[#b2f0c9]">Popular Tier</span>
-                  <span className="font-bold text-white">50 Credits Block</span>
-                </div>
-                <p className="text-xs text-[#cee6d4]">
-                  Deployable across all 6 workstreams anytime within 12 months.
-                </p>
-              </div>
-            </div>
-            <button
-              onClick={() => {
-                const el = document.getElementById('credit-marketplace-catalog');
-                el?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="w-full py-3.5 px-4 rounded-xl bg-[#b2f0c9] text-[#002111] text-sm font-bold hover:bg-white transition-colors text-center shadow-sm"
-            >
-              Purchase Credits
-            </button>
-          </div>
-        </div>
-
-        {/* 2. FRACTIONAL CREDIT MARKETPLACE CATALOG */}
+        {/* FRACTIONAL CREDIT MARKETPLACE CATALOG */}
         <div className="bg-white border border-[#edd7bb] rounded-3xl p-6 sm:p-10 shadow-md" id="credit-marketplace-catalog">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
             <div>
