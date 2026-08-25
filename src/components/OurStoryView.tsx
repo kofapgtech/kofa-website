@@ -1,6 +1,6 @@
 import React from 'react';
 import { SankofaBirdIcon } from './KofaLogo';
-import { Flag, Eye } from 'lucide-react';
+import { Flag } from 'lucide-react';
 
 export const OurStoryView: React.FC = () => {
   return (
@@ -19,10 +19,14 @@ export const OurStoryView: React.FC = () => {
                 the word Sankofa
               </h1>
 
-              <div className="space-y-4 text-base sm:text-lg lg:text-xl text-[#e4f5ea] font-normal leading-relaxed">
+              <div className="space-y-4 text-base sm:text-lg text-[#e4f5ea] font-normal leading-relaxed">
                 <p>
                   from the Akan people of West Africa (Ghana). It teaches:{' '}
                   <em className="italic text-white">"Go back and fetch what you have forgotten."</em>
+                </p>
+                <p>
+                  The symbol — a bird reaching back for an egg — represents learning from
+                  the past to build the future.
                 </p>
               </div>
             </div>
@@ -45,34 +49,21 @@ export const OurStoryView: React.FC = () => {
         </div>
       </section>
 
-      {/* KOFA PHILOSOPHY & S² FRAMEWORK INTRO */}
+      {/* KOFA PHILOSOPHY */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="bg-white border border-[#edd7bb] rounded-2xl p-8 sm:p-12 shadow-sm">
-          <div className="space-y-6">
-            <p className="text-base sm:text-lg text-[#404942] leading-relaxed">
-              KOFA applies this philosophy to how we support our partners. We were created to support an annual community festival, which required cross-functional expertise to execute on time, under budget, and aligned with our vision to drive social impact through economic development and access to wellness.
-            </p>
-
-            <div>
-              <h3 className="text-2xl sm:text-3xl font-bold font-display text-[#2c6748] mb-4">
-                KOFA works from our S² Framework
-              </h3>
-              <div className="space-y-3 text-base sm:text-lg text-[#404942] leading-relaxed">
-                <p>
-                  <strong className="text-[#2c6748]">Sustainability 1:</strong> The work is aligned with at least one of the seventeen UNSDGs
-                </p>
-                <p>
-                  <strong className="text-[#2c6748]">Sustainability 2:</strong> Impact and revenue are not tradeoffs; we create revenue generating initiatives that also drive impact.
-                </p>
-              </div>
-            </div>
-          </div>
+          <p className="text-base sm:text-lg text-[#404942] leading-relaxed">
+            KOFA applies this philosophy to how we support our partners. We were created
+            to support an annual community festival, which required cross-functional
+            expertise to execute on time, under budget, and aligned with our vision to
+            drive social impact through economic development and access to wellness.
+          </p>
         </div>
       </section>
 
-      {/* 2. MISSION & VISION SECTION (2 Warm Cards) */}
+      {/* 2. MISSION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 pb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 gap-8">
           {/* Mission Card */}
           <div id="mission" className="scroll-mt-24 bg-[#fff1e3] border border-[#edd7bb] rounded-2xl p-8 sm:p-10 shadow-sm flex flex-col justify-between">
             <div>
@@ -83,36 +74,15 @@ export const OurStoryView: React.FC = () => {
                 </h2>
               </div>
               <p className="text-base sm:text-lg text-[#404942] leading-relaxed">
-                Kofa P/G transforms community impact into community development strategy. We blend economic analysis, digital media, and stakeholder mobilization to create revenue-generating initiativ[...]
+                Kofa P/G transforms community impact into a community development
+                strategy. We blend economic analysis, digital media, and stakeholder
+                mobilization to create revenue-generating initiatives for small medium
+                sized enterprise, non-profits and organizations interested in social
+                impact.
               </p>
             </div>
           </div>
 
-          {/* Vision Card */}
-          <div id="vision" className="scroll-mt-24 bg-[#fff1e3] border border-[#edd7bb] rounded-2xl p-8 sm:p-10 shadow-sm flex flex-col justify-between">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <Eye className="w-6 h-6 text-[#2c6748]" />
-                <h2 className="text-2xl sm:text-3xl font-bold font-display text-[#2c6748]">
-                  Vision
-                </h2>
-              </div>
-              <p className="text-base sm:text-lg text-[#404942] leading-relaxed mb-4">
-                Every public-serving institution in the greater Chicago region runs on the
-                Sustainable² framework — impact measured against the UN Sustainable
-                Development Goals, funded by revenue the work generates itself.
-              </p>
-              <p className="text-base text-[#404942] leading-relaxed mb-6">
-                A region where no mission dies in a grant cycle, and where community
-                benefit is a line in the operating model, not the annual report.
-              </p>
-
-              {/* Inset Border Quote */}
-              <div className="border-l-2 border-[#2c6748] pl-4 py-1 text-sm sm:text-base text-[#251a08] font-medium italic">
-                Within two years, we will launch KOFA Global Partners to provide complimentary legal services.
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -127,9 +97,7 @@ export const OurStoryView: React.FC = () => {
               The Sustainable² (S²) Framework
             </h2>
             <p className="text-base sm:text-lg text-[#cee6d4] leading-relaxed">
-              Most public interest programs spend down their capital and stay trapped in
-              fragile grant cycles. S² is the operational engine we use to break that
-              vulnerability — two layers, applied together.
+              KOFA works from our S² Framework.
             </p>
           </div>
 
@@ -139,9 +107,8 @@ export const OurStoryView: React.FC = () => {
                 S¹: Impact
               </h3>
               <p className="text-sm sm:text-base text-[#cee6d4] leading-relaxed">
-                Every initiative drives clear, trackable, reportable progress aligned with
-                both localized community needs and global standards, including the United
-                Nations Sustainable Development Goals.
+                The work is aligned with at least one of the seventeen UN Sustainable
+                Development Goals.
               </p>
             </div>
 
@@ -150,9 +117,8 @@ export const OurStoryView: React.FC = () => {
                 S²: Revenue
               </h3>
               <p className="text-sm sm:text-base text-[#cee6d4] leading-relaxed">
-                We re-engineer projects to generate their own earned revenue. Injecting
-                business mechanics directly into civic and community spaces breaks the
-                volatile cycle of grant and donation dependency.
+                Impact and revenue are not tradeoffs. We create revenue-generating
+                initiatives that also drive impact.
               </p>
             </div>
           </div>
