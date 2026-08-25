@@ -119,7 +119,7 @@ export const WorkstreamsSection: React.FC<WorkstreamsSectionProps> = ({
 
   return (
     <>
-      <section className="w-full bg-[#080c09] text-white py-20 md:py-28 px-4 sm:px-6 lg:px-8 border-t border-[#135134]" id="workstreams">
+      <section className="w-full bg-[#3a2415] text-white py-20 md:py-28 px-4 sm:px-6 lg:px-8 border-t border-[#5a3a22]" id="workstreams">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display text-white tracking-tight mb-6">

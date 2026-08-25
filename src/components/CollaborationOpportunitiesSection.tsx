@@ -50,11 +50,11 @@ export const CollaborationOpportunitiesSection: React.FC<CollaborationOpportunit
 }) => (
   <section
     id="collaboration-opportunities"
-    className="w-full scroll-mt-24 bg-[#fff1e3] border-t border-[#edd7bb] px-4 sm:px-6 lg:px-8 py-20 md:py-28"
+    className="w-full scroll-mt-24 bg-[#3a2415] border-t border-[#5a3a22] px-4 sm:px-6 lg:px-8 py-20 md:py-28"
   >
     <div className="max-w-7xl mx-auto">
       <div className="max-w-3xl mb-14">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display text-[#251a08] tracking-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display text-white tracking-tight">
           Our Services
         </h2>
       </div>
