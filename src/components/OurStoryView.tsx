@@ -62,7 +62,7 @@ export const OurStoryView: React.FC = () => {
                 </h2>
               </div>
               <p className="text-base sm:text-lg text-[#404942] leading-relaxed">
-                KOFA applies this philosophy to how we support our partners. We were
+                KOFA applies this 'Sankofa' philosophy to how we support our partners. We were
                 created to support an annual community festival, which required
                 cross-functional expertise to execute on time, under budget, and aligned
                 with our vision to drive social impact through economic development and
