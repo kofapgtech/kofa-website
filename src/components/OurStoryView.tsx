@@ -1,6 +1,6 @@
 import React from 'react';
 import { SankofaBirdIcon } from './KofaLogo';
-import { Flag } from 'lucide-react';
+import { Flag, Sparkles } from 'lucide-react';
 
 export const OurStoryView: React.FC = () => {
   return (
@@ -49,21 +49,28 @@ export const OurStoryView: React.FC = () => {
         </div>
       </section>
 
-      {/* KOFA PHILOSOPHY */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="bg-white border border-[#edd7bb] rounded-2xl p-8 sm:p-12 shadow-sm">
-          <p className="text-base sm:text-lg text-[#404942] leading-relaxed">
-            KOFA applies this philosophy to how we support our partners. We were created
-            to support an annual community festival, which required cross-functional
-            expertise to execute on time, under budget, and aligned with our vision to
-            drive social impact through economic development and access to wellness.
-          </p>
-        </div>
-      </section>
-
-      {/* 2. MISSION */}
+      {/* 2. PHILOSOPHY & MISSION (2 Warm Cards) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 pb-20">
-        <div className="grid grid-cols-1 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Philosophy Card */}
+          <div className="bg-[#fff1e3] border border-[#edd7bb] rounded-2xl p-8 sm:p-10 shadow-sm flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <Sparkles className="w-6 h-6 text-[#2c6748]" />
+                <h2 className="text-2xl sm:text-3xl font-bold font-display text-[#2c6748]">
+                  Philosophy
+                </h2>
+              </div>
+              <p className="text-base sm:text-lg text-[#404942] leading-relaxed">
+                KOFA applies this philosophy to how we support our partners. We were
+                created to support an annual community festival, which required
+                cross-functional expertise to execute on time, under budget, and aligned
+                with our vision to drive social impact through economic development and
+                access to wellness.
+              </p>
+            </div>
+          </div>
+
           {/* Mission Card */}
           <div id="mission" className="scroll-mt-24 bg-[#fff1e3] border border-[#edd7bb] rounded-2xl p-8 sm:p-10 shadow-sm flex flex-col justify-between">
             <div>
@@ -82,7 +89,6 @@ export const OurStoryView: React.FC = () => {
               </p>
             </div>
           </div>
-
         </div>
       </section>
 
