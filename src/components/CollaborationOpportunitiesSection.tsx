@@ -53,13 +53,10 @@ export const CollaborationOpportunitiesSection: React.FC<CollaborationOpportunit
     className="w-full scroll-mt-24 bg-[#fff1e3] border-t border-[#edd7bb] px-4 sm:px-6 lg:px-8 py-20 md:py-28"
   >
     <div className="max-w-7xl mx-auto">
-      <div className="max-w-3xl mb-14 space-y-2">
+      <div className="max-w-3xl mb-14">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display text-[#251a08] tracking-tight">
-          Collaboration Opportunities
+          Our Services
         </h2>
-        <p className="text-lg sm:text-xl font-display font-bold text-[#2c6748]">
-          Co/Joint Ventures or Fractional Collaboration
-        </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -72,14 +69,10 @@ export const CollaborationOpportunitiesSection: React.FC<CollaborationOpportunit
               <span className="w-11 h-11 shrink-0 rounded-full bg-[#cee6d4] text-[#2c6748] flex items-center justify-center">
                 {track.icon}
               </span>
-              <span className="font-anton text-xs uppercase tracking-widest text-[#707972]">
-                Option {track.number}
-              </span>
+              <h3 className="text-2xl font-bold font-display text-[#251a08]">
+                {track.title}
+              </h3>
             </div>
-
-            <h3 className="text-2xl font-bold font-display text-[#251a08] mb-2">
-              {track.title}
-            </h3>
             <p className="text-sm font-semibold text-[#2c6748] mb-4">{track.subhead}</p>
 
             <p className="text-sm sm:text-base text-[#404942] leading-relaxed mb-6">
