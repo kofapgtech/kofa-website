@@ -93,7 +93,7 @@ export const ServicesMarketplaceView: React.FC<ServicesMarketplaceViewProps> = (
   };
 
   return (
-    <div className="w-full bg-[#f6dfc3] text-[#251a08] py-12 md:py-20">
+    <div className="w-full bg-[#fff8f3] text-[#251a08] py-12 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* FRACTIONAL CREDIT MARKETPLACE CATALOG */}
         <div className="bg-white border border-[#edd7bb] rounded-3xl p-6 sm:p-10 shadow-md" id="credit-marketplace-catalog">

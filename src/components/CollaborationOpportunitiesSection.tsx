@@ -50,7 +50,7 @@ export const CollaborationOpportunitiesSection: React.FC<CollaborationOpportunit
 }) => (
   <section
     id="collaboration-opportunities"
-    className="w-full scroll-mt-24 bg-[#3a2415] border-t border-[#5a3a22] px-4 sm:px-6 lg:px-8 py-20 md:py-28"
+    className="w-full scroll-mt-24 bg-[#2c6748] border-t border-[#1f4b34] px-4 sm:px-6 lg:px-8 py-20 md:py-28"
   >
     <div className="max-w-7xl mx-auto">
       <div className="max-w-3xl mb-14">

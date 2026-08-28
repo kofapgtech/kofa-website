@@ -29,7 +29,7 @@ export const CaseStudiesSection: React.FC = () => {
   return (
     <section
       id="case-studies"
-      className="w-full scroll-mt-24 bg-[#f6dfc3] text-[#251a08] border-t border-[#edd7bb] px-4 sm:px-6 lg:px-8 py-20 md:py-28"
+      className="w-full scroll-mt-24 bg-[#fff8f3] text-[#251a08] border-t border-[#edd7bb] px-4 sm:px-6 lg:px-8 py-20 md:py-28"
     >
       <div className="max-w-7xl mx-auto">
         <div className="mb-10">
@@ -40,7 +40,7 @@ export const CaseStudiesSection: React.FC = () => {
 
         {/* Track switch */}
         <div
-          className="inline-flex rounded-xl border border-[#edd7bb] bg-[#fff8f3] p-1 mb-6"
+          className="inline-flex rounded-xl border border-[#edd7bb] bg-white p-1 mb-6"
           role="tablist"
           aria-label="Engagement track"
         >
