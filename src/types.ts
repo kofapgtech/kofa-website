@@ -11,14 +11,18 @@ export interface ServiceItem {
   duration: string;
 }
 
+export interface WorkstreamCaseStudy {
+  name: string;
+  body: string;
+}
+
 export interface WorkstreamItem {
   id: string;
   name: string;
   shortName: string;
   icon: string;
   description: string;
-  coreCapabilities: string[];
-  leadRole: string;
+  caseStudies: WorkstreamCaseStudy[];
 }
 
 export interface PillarItem {

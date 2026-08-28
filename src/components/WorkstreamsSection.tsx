@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { GitFork, Megaphone, Handshake, BarChart3, Users, Wrench, X, Sparkles, Check } from 'lucide-react';
+import { GitFork, Megaphone, Handshake, BarChart3, Users, Wrench, X, Sparkles } from 'lucide-react';
 import { WorkstreamItem } from '../types';
 
 interface WorkstreamsSectionProps {
@@ -12,84 +12,128 @@ const workstreamsData: WorkstreamItem[] = [
     name: 'PROGRAMS',
     shortName: 'Programs',
     icon: 'nodes',
-    description: 'Direct community deployment pipelines, institutional program rollouts, and social equity initiative management.',
-    coreCapabilities: [
-      'Sustainable2 Program Implementation',
-      'Community Ownership Structure Design',
-      'Civic Stakeholder Mobilization',
-      'Public Institutional Program Design'
+    description:
+      'End-to-end project management, curriculum design, and operationalizing complex cross-border initiatives.',
+    caseStudies: [
+      {
+        name: 'South Side Help Center (SSHC)',
+        body: 'Delivered end-to-end operational management for the 4-week RISE Academy cohorts. Executed rigorous weekly reporting by cleaning trainee performance and health referral data, delivering actionable insights to SSHC leadership that synthesized program outputs. Managed all stakeholder coordination, e-learning logistics, and outreach strategies.',
+      },
+      {
+        name: 'Purchasing with Purpose',
+        body: 'Designed and deployed a robust 14-module, self-paced curriculum. Innovated the delivery by utilizing AI tools and voice cloning to efficiently teach public interest leaders Total Cost of Ownership Analysis.',
+      },
+      {
+        name: 'Diaspora Tribe',
+        body: 'Served as the Launch Phase Project Manager for a complex cross-border execution between the US and Ghana. Managed strict regulatory compliance, document governance, staff upskilling, and served as the central liaison for international government and legal contacts.',
+      },
     ],
-    leadRole: 'Director of Restorative Programs'
   },
   {
     id: 'studio',
     name: 'STUDIO',
     shortName: 'Studio',
     icon: 'megaphone',
-    description: 'High-impact multimedia storytelling, documentary narratives, sustainable web experiences, and visual policy synthesis.',
-    coreCapabilities: [
-      'Qualitative Community Narrative Capture',
-      'Accessible Digital Media Campaigns',
-      'Data Storytelling & Infographic Suites',
-      'Low-carbon Digital Product Design'
+    description:
+      'High-impact multimedia production, brand architecture, and transforming complex data into compelling visual narratives.',
+    caseStudies: [
+      {
+        name: 'Pride South Side',
+        body: 'Built the original brand architecture and successfully designed a new, distinct theme for each of the last seven years. This strategy has generated millions of organic impressions across social campaigns and consistently drives an average of 10,000 unique website visitors annually. Most recently, produced “Pride Shorts,” a cinematic docuseries elevating the 2026 “Love in Action” festival into a premium lifestyle brand.',
+      },
+      {
+        name: 'Purchasing with Purpose',
+        body: 'Led the visual identity for the “3% Shift” campaign, establishing a dual-messaging framework to shift institutional and household spending to People and Planet First Verified (PPFV) businesses. Translated complex economic frameworks into highly accessible short docuseries, interviews, UI layouts, and wireframes for the campaign’s digital tools.',
+      },
+      {
+        name: 'Diaspora Tribe',
+        body: 'Engineered the foundational brand identity and visual storytelling for Kofa’s expanding international portfolio, including the design and narrative assets for the physical Diaspora House in Ghana.',
+      },
+      {
+        name: 'South Side Help Center (SSHC)',
+        body: 'Created comprehensive program branding and produced the visual content required for high-stakes presentations, impact reports, and video features.',
+      },
     ],
-    leadRole: 'Creative Director & Story Lead'
   },
   {
     id: 'ppc',
     name: 'PARTNERS, POLICY & COMMS (PPC)',
     shortName: 'Partners, Policy & Comms',
     icon: 'handshake',
-    description: 'Legislative analysis, cross-sector coalition alignment, policy drafting, and strategic institutional communication.',
-    coreCapabilities: [
-      'Municipal & State Policy Drafting',
-      'Anchor Institution Supplier Audits',
-      'Multi-stakeholder Consensus Building',
-      'Restorative Procurement Guidelines'
+    description:
+      'Driving legislative alignment, cross-sector mobilization, and securing high-value strategic partnerships.',
+    caseStudies: [
+      {
+        name: 'Pride South Side (7-Year Partnership)',
+        body: 'Recruited the mayor of Chicago to participate in each annual event. Successfully secured the host venue, developed all external messaging, and built a strategic partner and vendor pipeline that has raised nearly $1 Million in total revenue since inception.',
+      },
+      {
+        name: 'South Side Help Center (SSHC)',
+        body: 'Developed a comprehensive legislative advocacy packet that successfully positioned the RISE Academy for state capacity and infrastructure grants. The strategy quantified the program’s success in training 236 Community Health Workers (CHWs), proving its direct impact on closing systemic healthcare gaps on the South Side.',
+      },
+      {
+        name: 'Purchasing with Purpose',
+        body: 'Directed comprehensive stakeholder outreach, successfully aligning regional non-profit organizations and elected officials to drive collaboration for the “3% Shift” campaign.',
+      },
     ],
-    leadRole: 'Policy & Coalitions Strategist'
   },
   {
     id: 'finops',
     name: 'FINOPS',
     shortName: 'FinOps',
     icon: 'chart',
-    description: 'Economic impact modeling, local wealth multiplier analysis, grant architecture, and cyclical reinvestment tracking.',
-    coreCapabilities: [
-      'Community Wealth Retention Modeling',
-      'Cyclical Reinvestment Metric Engines',
-      'Social Return on Spend (SROS) Tracking',
-      'Capital Stack & Grant Structuring'
+    description:
+      'Financial modeling, cyclical reinvestment tracking, data synthesis, and maintaining strict budget discipline.',
+    caseStudies: [
+      {
+        name: 'Pride South Side',
+        body: 'Built, managed, and value-engineered the festival budget every year, maintaining a consistent track record of net-positive or breakeven budgets for seven consecutive years. Engineered a “Two-Asks” sponsorship strategy to secure high-visibility institutional funding and led a comprehensive audit of five years of historical data (attendance, vendor revenue, health outcomes) to lock in baselines for the 2026 event.',
+      },
+      {
+        name: 'Purchasing with Purpose',
+        body: 'Constructed the “Chicago Economy 3.0” revenue model—a sustainable financial strategy leveraging a freemium masterclass model, a targeted 25 small-donor pipeline, and the aggressive pursuit of mission-aligned grants from major healthcare anchor networks.',
+      },
+      {
+        name: 'Diaspora Tribe',
+        body: 'Managed end-to-end Investor Relations (IR) to ensure strict investor readiness. This included managing the data room, tracking due diligence Q&A, and ensuring the business narrative perfectly aligned with the financial models and cash-need projections.',
+      },
     ],
-    leadRole: 'Chief Financial & Economic Analyst'
   },
   {
     id: 'experiences',
     name: 'EXPERIENCES',
     shortName: 'Experiences',
     icon: 'users',
-    description: 'Participatory community workshops, restorative listening circles, civic symposia, and transformative leadership labs.',
-    coreCapabilities: [
-      'Sankofa Restorative Circles',
-      'Participatory Budgeting Sessions',
-      'Executive Restorative Leadership Summits',
-      'Cross-neighborhood Policy Dialogues'
+    description:
+      'Designing, scaling, and executing large-scale, high-retention community events and activations.',
+    caseStudies: [
+      {
+        name: 'Pride South Side',
+        body: 'Curated and executed the entire festival footprint, successfully managing over 100,000 attendees since inception, with an average of 7,500 attendees annually. Operationalized bespoke high-energy pop-ups, community mixers, and VIP activations explicitly designed to drive organic retention within public health ecosystems.',
+      },
     ],
-    leadRole: 'Head of Community Experiences'
   },
   {
     id: 'tech',
     name: 'TECH & TOOLS',
     shortName: 'Tech & Tools',
     icon: 'gear',
-    description: 'Modern software tools, procurement impact calculators, compliance dashboards, and automated ESG/DEI intelligence systems.',
-    coreCapabilities: [
-      'Procurement Impact Intelligence Engine',
-      'Real-time Vendor Diversity & Wealth Dashboards',
-      'Automated Policy Compliance Monitors',
-      'API Integrations for Anchor ERPs'
+    description:
+      'Rapid deployment of custom software tools, impact calculators, and automated digital ecosystems.',
+    caseStudies: [
+      {
+        name: 'Purchasing with Purpose',
+        body: 'Built the 3T Procurement Calculator (3T BIOS)—initially as a complex spreadsheet and successfully converted into a full software solution. This tool features a Side-by-Side Savings Tracker and an Executive Decision Hub, allowing procurement leaders to quantify the financial and social ROI of ethical sourcing.',
+      },
+      {
+        name: 'Pride South Side',
+        body: 'Built and deployed the festival website and ticketing workflow annually. Conceptualized the LoveWell Network digital app, a mobile-first platform designed to gamify healthcare access by unlocking local business discounts when users maintain medical appointments.',
+      },
+      {
+        name: 'South Side Help Center (SSHC)',
+        body: 'Deployed a comprehensive online e-learning platform via Mighty Networks (Mighty Pro) for the RISE Academy. This self-guided learning environment allowed participants to access core modules, complete asynchronous tests, and interact digitally, which was critical for their successful program completion and certification.',
+      },
     ],
-    leadRole: 'Lead Systems Architect'
   },
 ];
 
@@ -163,7 +207,7 @@ export const WorkstreamsSection: React.FC<WorkstreamsSectionProps> = ({
 
       {selectedWorkstream && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4 animate-in fade-in">
-          <div className="bg-[#fff8f3] text-[#251a08] rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-[#edd7bb] relative">
+          <div className="bg-[#fff8f3] text-[#251a08] rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-6 sm:p-8 shadow-2xl border border-[#edd7bb] relative">
             <button
               onClick={() => setSelectedWorkstream(null)}
               className="absolute top-4 right-4 p-1.5 rounded-full hover:bg-[#ffebd2] text-[#404942]"
@@ -172,7 +216,7 @@ export const WorkstreamsSection: React.FC<WorkstreamsSectionProps> = ({
             </button>
 
             <div className="flex items-center gap-4 mb-5">
-              <div className="w-14 h-14 rounded-full bg-[#b2f0c9] flex items-center justify-center text-[#2c6748]">
+              <div className="w-14 h-14 shrink-0 rounded-full bg-[#b2f0c9] flex items-center justify-center text-[#2c6748]">
                 {renderIcon(selectedWorkstream.icon)}
               </div>
               <div>
@@ -182,26 +226,25 @@ export const WorkstreamsSection: React.FC<WorkstreamsSectionProps> = ({
             </div>
 
             <p className="text-sm text-[#404942] leading-relaxed mb-6">
+              <strong className="text-[#251a08]">Our Capability: </strong>
               {selectedWorkstream.description}
             </p>
 
             <h4 className="text-xs font-bold uppercase tracking-wider text-[#251a08] mb-3">
-              Core Deliverables & Capabilities:
+              Case Studies
             </h4>
-            <ul className="space-y-2 mb-6">
-              {selectedWorkstream.coreCapabilities.map((cap, i) => (
-                <li key={i} className="flex items-center gap-2.5 text-xs sm:text-sm text-[#251a08]">
-                  <span className="w-4 h-4 rounded-full bg-[#cee6d4] text-[#2c6748] flex items-center justify-center shrink-0">
-                    <Check className="w-2.5 h-2.5 stroke-[3]" />
-                  </span>
-                  <span>{cap}</span>
-                </li>
+            <div className="space-y-4 mb-2">
+              {selectedWorkstream.caseStudies.map((cs, i) => (
+                <div
+                  key={i}
+                  className="rounded-lg border border-[#edd7bb] bg-[#fff1e3] p-4"
+                >
+                  <p className="text-sm text-[#251a08]">
+                    <strong>{cs.name}: </strong>
+                    <span className="text-[#404942] leading-relaxed">{cs.body}</span>
+                  </p>
+                </div>
               ))}
-            </ul>
-
-            <div className="bg-[#fff1e3] p-3 rounded-lg border border-[#edd7bb] text-xs text-[#526859] mb-6 flex items-center justify-between">
-              <span>Workstream Lead:</span>
-              <strong className="text-[#251a08]">{selectedWorkstream.leadRole}</strong>
             </div>
 
             <button
@@ -209,7 +252,7 @@ export const WorkstreamsSection: React.FC<WorkstreamsSectionProps> = ({
                 setSelectedWorkstream(null);
                 onOpenSchedule();
               }}
-              className="w-full py-3 rounded-lg bg-[#2c6748] text-white text-sm font-semibold hover:bg-[#23533a] transition-colors"
+              className="w-full mt-6 py-3 rounded-lg bg-[#2c6748] text-white text-sm font-semibold hover:bg-[#23533a] transition-colors"
             >
               Engage this Workstream
             </button>
