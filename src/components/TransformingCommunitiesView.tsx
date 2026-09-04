@@ -238,7 +238,7 @@ export const TransformingCommunitiesView: React.FC<TransformingCommunitiesViewPr
 
         {/* 2 Main Service Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-          {/* Card 1: Bespoke Services */}
+          {/* Card 1: Co-Ventures & Joint Ventures */}
           <div className="bg-[#fff8f3] border border-[#edd7bb] rounded-2xl p-8 lg:p-10 flex flex-col justify-between hover:shadow-xl transition-shadow bg-gradient-to-b from-[#fff8f3] to-[#fff1e3]/40">
             <div>
               {/* Compass Icon in soft beige circle */}
@@ -247,7 +247,7 @@ export const TransformingCommunitiesView: React.FC<TransformingCommunitiesViewPr
               </div>
 
               <h3 className="text-2xl lg:text-3xl font-bold font-display text-[#251a08] mb-4">
-                Bespoke Services
+                Co-Ventures & Joint Ventures
               </h3>
 
               <p className="text-[#404942] text-sm md:text-base leading-relaxed mb-8">
@@ -281,11 +281,11 @@ export const TransformingCommunitiesView: React.FC<TransformingCommunitiesViewPr
               onClick={() => onNavigate('services')}
               className="w-full py-3.5 px-4 rounded-lg border border-[#707972]/60 text-sm font-semibold text-[#251a08] hover:bg-[#ffebd2] hover:border-[#2c6748] transition-all text-center"
             >
-              Explore Bespoke Engagements
+              Explore Co-Ventures &amp; Joint Ventures
             </button>
           </div>
 
-          {/* Card 2: Fractional Services */}
+          {/* Card 2: Fractional Collaborations */}
           <div className="bg-[#fff8f3] border border-[#edd7bb] rounded-2xl p-8 lg:p-10 flex flex-col justify-between hover:shadow-xl transition-shadow bg-gradient-to-b from-[#fff8f3] to-[#f4fbf6]/50">
             <div>
               {/* Refresh / Circular Arrow Icon in mint circle */}
@@ -294,7 +294,7 @@ export const TransformingCommunitiesView: React.FC<TransformingCommunitiesViewPr
               </div>
 
               <h3 className="text-2xl lg:text-3xl font-bold font-display text-[#251a08] mb-4">
-                Fractional Services
+                Fractional Collaborations
               </h3>
 
               <p className="text-[#404942] text-sm md:text-base leading-relaxed mb-6">
@@ -331,7 +331,7 @@ export const TransformingCommunitiesView: React.FC<TransformingCommunitiesViewPr
               onClick={() => onNavigate('services')}
               className="w-full py-3.5 px-4 rounded-lg bg-[#2c6748] text-white text-sm font-semibold hover:bg-[#23533a] active:scale-[0.98] transition-all text-center shadow-sm"
             >
-              Explore Fractional Services
+              Explore Fractional Collaborations
             </button>
           </div>
         </div>

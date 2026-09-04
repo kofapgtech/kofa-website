@@ -27,13 +27,13 @@ const tracks: Track[] = [
   },
   {
     number: '2',
-    title: 'Fractional Collaboration',
+    title: 'Fractional Collaborations',
     subhead: 'On-Demand, Deliverable-Driven Expertise Across 6 Workstreams',
-    body: 'Access high-velocity execution and strategic leadership without the extreme overhead, slow timelines, or rigid billable hours of traditional consulting agencies. Fractional Services plug our multi-disciplinary delivery stack—Planners (policy/strategy), Architects (systems design), and Builders (rapid execution)—directly into your existing team across our six core workstreams: Partners, Policy & Comms, Studio, FinOps, Tech & Tools, Programs, and Experiences.',
+    body: 'Access high-velocity execution and strategic leadership without the extreme overhead, slow timelines, or rigid billable hours of traditional consulting agencies. Fractional Collaborations plug our multi-disciplinary delivery stack—Planners (policy/strategy), Architects (systems design), and Builders (rapid execution)—directly into your existing team across our six core workstreams: Partners, Policy & Comms, Studio, FinOps, Tech & Tools, Programs, and Experiences.',
     bestFor:
       'Non-profits, civic entities, and growing businesses needing targeted capacity, specialized creative/technical execution, or fractional executive leadership on an agile basis.',
     howItWorks:
-      'Fixed-cost packages purchased upfront and redeemed against specific, pre-priced deliverables—eliminating time-and-materials friction in favor of guaranteed, shipped outcomes.',
+      'Select from a list of possible Fractional Collaborations, each with fixed-cost, pre-priced deliverables—eliminating time-and-materials friction in favor of guaranteed, shipped outcomes.',
     icon: <Zap className="w-6 h-6" />,
     cta: 'View Services',
   },

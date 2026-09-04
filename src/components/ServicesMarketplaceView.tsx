@@ -91,10 +91,10 @@ export const ServicesMarketplaceView: React.FC<ServicesMarketplaceViewProps> = (
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
             <div>
               <h3 className="text-2xl sm:text-3xl font-bold font-display text-[#2c6748]">
-                Fractional Marketplace Catalog
+                Possible Fractional Collaborations
               </h3>
               <p className="text-xs sm:text-sm text-[#707972] mt-1">
-                Select deployable modules to build your fractional service package
+                Specific engagements available under Fractional Collaborations — select any that interest you
               </p>
             </div>
 
@@ -103,13 +103,13 @@ export const ServicesMarketplaceView: React.FC<ServicesMarketplaceViewProps> = (
               <div className="flex items-center gap-3 bg-[#b2f0c9] text-[#002111] px-4 py-2 rounded-xl border border-[#97d4ae] animate-in fade-in">
                 <ShoppingBag className="w-4 h-4 text-[#2c6748]" />
                 <span className="text-xs font-bold font-mono">
-                  {selectedItems.length} {selectedItems.length === 1 ? 'module' : 'modules'} selected
+                  {selectedItems.length} {selectedItems.length === 1 ? 'collaboration' : 'collaborations'} selected
                 </span>
                 <button
                   onClick={onOpenSchedule}
                   className="ml-2 px-3 py-1 bg-[#2c6748] text-white rounded text-xs font-bold hover:bg-[#23533a]"
                 >
-                  Book Package
+                  Schedule Intake
                 </button>
               </div>
             )}
@@ -186,7 +186,7 @@ export const ServicesMarketplaceView: React.FC<ServicesMarketplaceViewProps> = (
                           : 'bg-[#2c6748] text-white hover:bg-[#23533a]'
                       }`}
                     >
-                      {isSelected ? 'Remove' : '+ Add to Package'}
+                      {isSelected ? 'Remove' : '+ Add to List'}
                     </button>
                   </div>
                 </div>
