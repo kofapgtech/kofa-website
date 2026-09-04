@@ -1,15 +1,5 @@
 export type NavScreen = 'home' | 'about' | 'services' | 'contact' | 'privacy' | 'terms';
 
-export interface ServiceItem {
-  id: string;
-  title: string;
-  category: 'bespoke' | 'fractional';
-  workstream: string;
-  description: string;
-  deliverables: string[];
-  duration: string;
-}
-
 export interface WorkstreamCaseStudy {
   name: string;
   body: string;

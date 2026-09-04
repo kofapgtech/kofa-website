@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { GitFork, Megaphone, Handshake, BarChart3, Users, Wrench, X, Sparkles } from 'lucide-react';
+import { ArrowRight, Filter } from 'lucide-react';
 import { WorkstreamItem } from '../types';
 
-interface WorkstreamsSectionProps {
+interface WorkstreamsCatalogSectionProps {
   onOpenSchedule: () => void;
 }
 
@@ -137,128 +137,108 @@ const workstreamsData: WorkstreamItem[] = [
   },
 ];
 
-export const WorkstreamsSection: React.FC<WorkstreamsSectionProps> = ({
+const GENERAL_BLURB =
+  'Kofa P/G workstreams help us control costs and support multifaceted work as one firm. Clients benefit from a multifunctional workflow that drives measurable outcomes and transformative initiatives.';
+
+interface Tile {
+  workstream: string;
+  name: string;
+  body: string;
+}
+
+export const WorkstreamsCatalogSection: React.FC<WorkstreamsCatalogSectionProps> = ({
   onOpenSchedule,
 }) => {
-  const [selectedWorkstream, setSelectedWorkstream] = useState<WorkstreamItem | null>(null);
+  const [selectedId, setSelectedId] = useState<string>('ALL');
 
-  const renderIcon = (iconName: string) => {
-    switch (iconName) {
-      case 'nodes':
-        return <GitFork className="w-6 h-6" />;
-      case 'megaphone':
-        return <Megaphone className="w-6 h-6" />;
-      case 'handshake':
-        return <Handshake className="w-6 h-6" />;
-      case 'chart':
-        return <BarChart3 className="w-6 h-6" />;
-      case 'users':
-        return <Users className="w-6 h-6" />;
-      case 'gear':
-        return <Wrench className="w-6 h-6" />;
-      default:
-        return <Sparkles className="w-6 h-6" />;
-    }
-  };
+  const selected = workstreamsData.find((w) => w.id === selectedId) ?? null;
+
+  const tiles: Tile[] = selected
+    ? selected.caseStudies.map((cs) => ({ workstream: selected.name, name: cs.name, body: cs.body }))
+    : workstreamsData.flatMap((w) =>
+        w.caseStudies.map((cs) => ({ workstream: w.name, name: cs.name, body: cs.body }))
+      );
 
   return (
-    <>
-      <section className="w-full bg-[#2c6748] text-white py-20 md:py-28 px-4 sm:px-6 lg:px-8 border-t border-[#1f4b34]" id="workstreams">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display text-white tracking-tight mb-6">
+    <div className="w-full bg-[#fff8f3] text-[#251a08] py-12 md:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* WORKSTREAMS CATALOG */}
+        <div className="bg-white border border-[#edd7bb] rounded-3xl p-6 sm:p-10 shadow-md" id="workstreams-catalog">
+          <div className="mb-8">
+            <h3 className="text-2xl sm:text-3xl font-bold font-display text-[#2c6748]">
               Our Workstreams
-            </h2>
-            <div className="max-w-3xl rounded-2xl border border-[#388e5d]/40 bg-[#122e20] p-6 sm:p-8">
-              <span className="block font-anton text-xs uppercase tracking-widest text-[#97d4ae] mb-2">
-                Access to 6 Workstreams
-              </span>
-              <p className="text-sm sm:text-base text-[#c9c6bf] leading-relaxed">
-                Kofa P/G workstreams help us control costs and support multifaceted work as
-                one firm. Clients benefit from a multifunctional workflow that drives
-                measurable outcomes and transformative initiatives.
-              </p>
-            </div>
+            </h3>
+            <p className="text-xs sm:text-sm text-[#707972] mt-1">
+              {selected ? (
+                <>
+                  <strong className="text-[#251a08]">Our Capability: </strong>
+                  {selected.description}
+                </>
+              ) : (
+                GENERAL_BLURB
+              )}
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {workstreamsData.map((ws) => (
-              <div
-                key={ws.id}
-                onClick={() => setSelectedWorkstream(ws)}
-                className="bg-[#fff8f3] text-[#251a08] rounded-2xl p-8 flex flex-col items-center text-center justify-center cursor-pointer transition-all duration-300 shadow-xl group border border-[#edd7bb] hover:bg-[#cee6d4] hover:border-[#2c6748] hover:-translate-y-1"
+          {/* Workstream Filters */}
+          <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 text-xs scrollbar-none">
+            <span className="text-[#707972] font-semibold flex items-center gap-1 shrink-0 mr-1">
+              <Filter className="w-3.5 h-3.5" /> Filter:
+            </span>
+            <button
+              onClick={() => setSelectedId('ALL')}
+              className={`px-3.5 py-1.5 rounded-full font-medium whitespace-nowrap transition-all ${
+                selectedId === 'ALL'
+                  ? 'bg-[#2c6748] text-white font-bold shadow-sm'
+                  : 'bg-[#fff1e3] text-[#404942] hover:bg-[#ffebd2]'
+              }`}
+            >
+              ALL
+            </button>
+            {workstreamsData.map((w) => (
+              <button
+                key={w.id}
+                onClick={() => setSelectedId(w.id)}
+                className={`px-3.5 py-1.5 rounded-full font-medium whitespace-nowrap transition-all ${
+                  selectedId === w.id
+                    ? 'bg-[#2c6748] text-white font-bold shadow-sm'
+                    : 'bg-[#fff1e3] text-[#404942] hover:bg-[#ffebd2]'
+                }`}
               >
-                <div className="w-16 h-16 rounded-full bg-[#b2f0c9] flex items-center justify-center text-[#2c6748] mb-5 group-hover:bg-[#2c6748] group-hover:text-white transition-colors shadow-sm">
-                  {renderIcon(ws.icon)}
-                </div>
+                {w.name}
+              </button>
+            ))}
+          </div>
 
-                <h3 className="font-anton text-xs tracking-widest text-[#251a08] group-hover:text-[#1e4732] transition-colors">
-                  {ws.name}
-                </h3>
-
-                <p className="text-xs text-[#707972] group-hover:text-[#2f4a3a] mt-2 line-clamp-2 transition-colors">
-                  {ws.description}
-                </p>
+          {/* Case Study Tiles */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {tiles.map((tile, i) => (
+              <div
+                key={`${tile.workstream}-${i}`}
+                className="border border-[#edd7bb] bg-[#fff8f3] rounded-2xl p-6 transition-all hover:bg-white hover:border-[#bda98f]"
+              >
+                <span className="font-anton text-[10px] uppercase tracking-wider text-[#707972] block mb-3">
+                  {tile.workstream}
+                </span>
+                <h4 className="text-lg font-bold font-display text-[#251a08] mb-2">
+                  {tile.name}
+                </h4>
+                <p className="text-xs text-[#404942] leading-relaxed">{tile.body}</p>
               </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {selectedWorkstream && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4 animate-in fade-in">
-          <div className="bg-[#fff8f3] text-[#251a08] rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-6 sm:p-8 shadow-2xl border border-[#edd7bb] relative">
+          <div className="mt-10 text-center">
             <button
-              onClick={() => setSelectedWorkstream(null)}
-              className="absolute top-4 right-4 p-1.5 rounded-full hover:bg-[#ffebd2] text-[#404942]"
+              onClick={onOpenSchedule}
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#2c6748] px-8 py-3.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#388e5d]"
             >
-              <X className="w-5 h-5" />
-            </button>
-
-            <div className="flex items-center gap-4 mb-5">
-              <div className="w-14 h-14 shrink-0 rounded-full bg-[#b2f0c9] flex items-center justify-center text-[#2c6748]">
-                {renderIcon(selectedWorkstream.icon)}
-              </div>
-              <div>
-                <span className="font-anton text-xs uppercase tracking-widest text-[#707972]">Workstream</span>
-                <h3 className="text-2xl font-bold font-display text-[#2c6748]">{selectedWorkstream.name}</h3>
-              </div>
-            </div>
-
-            <p className="text-sm text-[#404942] leading-relaxed mb-6">
-              <strong className="text-[#251a08]">Our Capability: </strong>
-              {selectedWorkstream.description}
-            </p>
-
-            <h4 className="text-xs font-bold uppercase tracking-wider text-[#251a08] mb-3">
-              Case Studies
-            </h4>
-            <div className="space-y-4 mb-2">
-              {selectedWorkstream.caseStudies.map((cs, i) => (
-                <div
-                  key={i}
-                  className="rounded-lg border border-[#edd7bb] bg-[#fff1e3] p-4"
-                >
-                  <p className="text-sm text-[#251a08]">
-                    <strong>{cs.name}: </strong>
-                    <span className="text-[#404942] leading-relaxed">{cs.body}</span>
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <button
-              onClick={() => {
-                setSelectedWorkstream(null);
-                onOpenSchedule();
-              }}
-              className="w-full mt-6 py-3 rounded-lg bg-[#2c6748] text-white text-sm font-semibold hover:bg-[#23533a] transition-colors"
-            >
-              Engage this Workstream
+              Schedule Intake
+              <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </div>
-      )}
-    </>
+      </div>
+    </div>
   );
 };
