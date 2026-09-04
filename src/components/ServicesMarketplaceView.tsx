@@ -12,7 +12,6 @@ const marketplaceServices: ServiceItem[] = [
     title: 'Sustainable Website Redesign',
     category: 'fractional',
     workstream: 'STUDIO',
-    credits: 10,
     description: 'Low-carbon web architecture, accessible UI design, and fast green hosting deployment.',
     deliverables: ['Energy-efficient carbon audit', 'WCAG AAA design system', 'Responsive Vite/Tailwind build'],
     duration: '2-3 weeks',
@@ -22,7 +21,6 @@ const marketplaceServices: ServiceItem[] = [
     title: 'Supply Chain & Procurement Audit',
     category: 'fractional',
     workstream: 'FINOPS',
-    credits: 15,
     description: 'Comprehensive analysis of current tier-1/tier-2 suppliers and identification of local restorative opportunities.',
     deliverables: ['Vendor geographic mapping', 'Restorative scorecards', 'Local spend reallocation matrix'],
     duration: '3-4 weeks',
@@ -32,7 +30,6 @@ const marketplaceServices: ServiceItem[] = [
     title: 'Sankofa Listening Circle Facilitation',
     category: 'fractional',
     workstream: 'EXPERIENCES',
-    credits: 8,
     description: 'Structured community story sessions to capture qualitative data and lived experience insights.',
     deliverables: ['3 Facilitated sessions', 'Transcribed narrative synthesis', 'Community priority report'],
     duration: '2 weeks',
@@ -42,7 +39,6 @@ const marketplaceServices: ServiceItem[] = [
     title: 'Restorative Procurement Policy Blueprint',
     category: 'fractional',
     workstream: 'PARTNERS, POLICY & COMMS (PPC)',
-    credits: 20,
     description: 'Custom governance and procurement policy language tailored for board approval and institutional bylaws.',
     deliverables: ['Board-ready policy draft', 'Legal compliance review', 'Implementation checklist'],
     duration: '4 weeks',
@@ -52,7 +48,6 @@ const marketplaceServices: ServiceItem[] = [
     title: 'Custom Impact & Wealth Dashboard',
     category: 'fractional',
     workstream: 'TECH & TOOLS',
-    credits: 25,
     description: 'Automated data visualization tool tracking vendor diversity, local multiplier effect, and ESG progress.',
     deliverables: ['Real-time BI dashboard', 'ERP connector scripts', 'Staff training walkthrough'],
     duration: '4-5 weeks',
@@ -62,7 +57,6 @@ const marketplaceServices: ServiceItem[] = [
     title: 'Sustainable2 Pilot Program Design',
     category: 'fractional',
     workstream: 'PROGRAMS',
-    credits: 30,
     description: 'End-to-end pilot architecture for civic institutions adopting sustainable circular procurement models.',
     deliverables: ['Pilot charter & KPIs', 'Partner recruitment toolkit', 'Evaluation framework'],
     duration: '6 weeks',
@@ -73,7 +67,6 @@ export const ServicesMarketplaceView: React.FC<ServicesMarketplaceViewProps> = (
   onOpenSchedule,
 }) => {
   const [selectedWorkstream, setSelectedWorkstream] = useState<string>('ALL');
-  const [cartCredits, setCartCredits] = useState<number>(0);
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
 
   const workstreamFilters = ['ALL', 'PROGRAMS', 'STUDIO', 'PARTNERS, POLICY & COMMS (PPC)', 'FINOPS', 'EXPERIENCES', 'TECH & TOOLS'];
@@ -85,33 +78,33 @@ export const ServicesMarketplaceView: React.FC<ServicesMarketplaceViewProps> = (
   const toggleItem = (service: ServiceItem) => {
     if (selectedItems.includes(service.id)) {
       setSelectedItems(selectedItems.filter((id) => id !== service.id));
-      setCartCredits((prev) => prev - (service.credits || 0));
     } else {
       setSelectedItems([...selectedItems, service.id]);
-      setCartCredits((prev) => prev + (service.credits || 0));
     }
   };
 
   return (
     <div className="w-full bg-[#fff8f3] text-[#251a08] py-12 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* FRACTIONAL CREDIT MARKETPLACE CATALOG */}
-        <div className="bg-white border border-[#edd7bb] rounded-3xl p-6 sm:p-10 shadow-md" id="credit-marketplace-catalog">
+        {/* FRACTIONAL SERVICE CATALOG */}
+        <div className="bg-white border border-[#edd7bb] rounded-3xl p-6 sm:p-10 shadow-md" id="fractional-services-catalog">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
             <div>
               <h3 className="text-2xl sm:text-3xl font-bold font-display text-[#2c6748]">
                 Fractional Marketplace Catalog
               </h3>
               <p className="text-xs sm:text-sm text-[#707972] mt-1">
-                Select deployable modules to calculate required credit allocation
+                Select deployable modules to build your fractional service package
               </p>
             </div>
 
-            {/* Credit Basket Summary */}
-            {cartCredits > 0 && (
+            {/* Selection Summary */}
+            {selectedItems.length > 0 && (
               <div className="flex items-center gap-3 bg-[#b2f0c9] text-[#002111] px-4 py-2 rounded-xl border border-[#97d4ae] animate-in fade-in">
                 <ShoppingBag className="w-4 h-4 text-[#2c6748]" />
-                <span className="text-xs font-bold font-mono">{cartCredits} Credits Total ({selectedItems.length} modules)</span>
+                <span className="text-xs font-bold font-mono">
+                  {selectedItems.length} {selectedItems.length === 1 ? 'module' : 'modules'} selected
+                </span>
                 <button
                   onClick={onOpenSchedule}
                   className="ml-2 px-3 py-1 bg-[#2c6748] text-white rounded text-xs font-bold hover:bg-[#23533a]"
@@ -159,9 +152,6 @@ export const ServicesMarketplaceView: React.FC<ServicesMarketplaceViewProps> = (
                     <div className="flex items-center justify-between gap-2 mb-3">
                       <span className="font-anton text-[10px] uppercase tracking-wider text-[#707972]">
                         {service.workstream}
-                      </span>
-                      <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#b2f0c9] text-[#002111] border border-[#97d4ae]">
-                        {service.credits} Credits
                       </span>
                     </div>
 

@@ -14,7 +14,7 @@ interface ServicesViewProps {
 
 /**
  * Services opens with the two collaboration tracks. The fractional catalog is
- * expensive real estate — a full credit marketplace — so it stays out of the
+ * expensive real estate — a full services marketplace — so it stays out of the
  * page until the visitor asks for it via the "View Services" CTA.
  */
 export const ServicesView: React.FC<ServicesViewProps> = ({ onOpenSchedule }) => {

@@ -298,7 +298,7 @@ export const TransformingCommunitiesView: React.FC<TransformingCommunitiesViewPr
               </h3>
 
               <p className="text-[#404942] text-sm md:text-base leading-relaxed mb-6">
-                Agile execution powered by our flexible credit system. Purchase a block of credits and deploy them across a specialized marketplace of impact-focused services as your needs evolve throughout the year.
+                Agile execution without the overhead of a full engagement. Draw on a specialized marketplace of fixed-price, impact-focused services as your needs evolve throughout the year.
               </p>
 
               {/* Example Deployment Nested Box */}
@@ -308,7 +308,7 @@ export const TransformingCommunitiesView: React.FC<TransformingCommunitiesViewPr
                     EXAMPLE DEPLOYMENT
                   </span>
                   <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#b2f0c9] text-[#002111] border border-[#97d4ae]">
-                    10 Credits
+                    2-3 Weeks
                   </span>
                 </div>
                 <div className="flex items-start gap-3 mt-2">
@@ -331,7 +331,7 @@ export const TransformingCommunitiesView: React.FC<TransformingCommunitiesViewPr
               onClick={() => onNavigate('services')}
               className="w-full py-3.5 px-4 rounded-lg bg-[#2c6748] text-white text-sm font-semibold hover:bg-[#23533a] active:scale-[0.98] transition-all text-center shadow-sm"
             >
-              View Credit Marketplace
+              Explore Fractional Services
             </button>
           </div>
         </div>

@@ -5,7 +5,6 @@ export interface ServiceItem {
   title: string;
   category: 'bespoke' | 'fractional';
   workstream: string;
-  credits?: number;
   description: string;
   deliverables: string[];
   duration: string;

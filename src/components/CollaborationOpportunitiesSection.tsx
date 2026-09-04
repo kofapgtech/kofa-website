@@ -33,7 +33,7 @@ const tracks: Track[] = [
     bestFor:
       'Non-profits, civic entities, and growing businesses needing targeted capacity, specialized creative/technical execution, or fractional executive leadership on an agile basis.',
     howItWorks:
-      'Fixed-cost credit packages purchased upfront and redeemed against specific, pre-priced deliverables—eliminating time-and-materials friction in favor of guaranteed, shipped outcomes.',
+      'Fixed-cost packages purchased upfront and redeemed against specific, pre-priced deliverables—eliminating time-and-materials friction in favor of guaranteed, shipped outcomes.',
     icon: <Zap className="w-6 h-6" />,
     cta: 'View Services',
   },
