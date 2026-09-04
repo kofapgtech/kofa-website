@@ -71,8 +71,6 @@ export const TransformingCommunitiesView: React.FC<TransformingCommunitiesViewPr
     'Purchasing with Purpose',
     'South Side Help Center',
     'Austin Lewis Cottage',
-    'District 7 Economic Alliance',
-    'Great Lakes Resilience Fund',
   ];
 
   return (
