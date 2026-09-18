@@ -18,7 +18,13 @@ export const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
   auth: { persistSession: false },
 });
 
-export type SubmissionSource = 'contact' | 'intake' | 'waitlist' | 'schedule';
+/**
+ * Which form a row came from. `contact` is the contact page, `connect` is the
+ * "Connect with us" section on the home page — kept distinct so the two can be
+ * reported on separately. Must stay in sync with the CHECK constraint in
+ * supabase/migrations/20260918000000_contact_submissions.sql.
+ */
+export type SubmissionSource = 'contact' | 'connect' | 'intake' | 'waitlist' | 'schedule';
 
 export interface ContactSubmission {
   name: string;

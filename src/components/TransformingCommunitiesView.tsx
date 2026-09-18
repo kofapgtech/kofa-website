@@ -54,7 +54,7 @@ export const TransformingCommunitiesView: React.FC<TransformingCommunitiesViewPr
       name: `${firstName} ${lastName}`.trim(),
       email: workEmail,
       organization: orgName,
-      source: 'contact',
+      source: 'connect',
     });
 
     setIsSubmitting(false);
