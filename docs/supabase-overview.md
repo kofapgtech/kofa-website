@@ -17,7 +17,7 @@ without pausing something else.
 | `kofa-os` (`rhuwwmcmfmqgudcwzdyu`) | **ACTIVE** | us-west-1 | 2026-08-11 | The internal operations platform. 43 tables. Real data. |
 | `pride-south-side` (`jcskmaiqkdoxubfsdons`) | **ACTIVE** | us-east-2 | 2026-09-17 | A community site backend. 10 tables, **all empty**. |
 | `kofa-website` (`oegiakeyzlacxgtuqrws`) | PAUSED | us-east-2 | 2026-08-17 | What the website code points at today. Contents unknown — cannot be inspected while paused. |
-| `kofapgtech's Project` (`asnsktfnvroawwvvpyqu`) | PAUSED | us-west-2 | 2026-07-28 | Appears unused. Pausing it frees nothing; it is already paused. |
+| `kofapgtech's Project` (`asnsktfnvroawwvvpyqu`) | PAUSED | us-west-2 | 2026-07-28 | Contents unknown — cannot be inspected while paused. Carries the default auto-generated project name and is referenced nowhere in this repo. Pausing it frees nothing; it is already paused. |
 
 ## `kofa-os` — the operations database
 
